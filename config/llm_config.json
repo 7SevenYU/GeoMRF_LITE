@@ -1,0 +1,19 @@
+{
+  "current_model": "qwen",
+  "models": {
+    "qwen": {
+      "api_base": "API_URL",
+      "api_key": "YOUR_API_KEY_HERE",
+      "model_name": "gpt-4o",
+      "temperature": 0.1,
+      "max_tokens": 512
+    },
+    "backup": {
+      "api_base": "APIURL",
+      "api_key": "YOUR_BACKUP_API_KEY_HERE",
+      "model_name": "gpt-4o",
+      "temperature": 0.2,
+      "max_tokens": 2048
+    }
+  }
+}

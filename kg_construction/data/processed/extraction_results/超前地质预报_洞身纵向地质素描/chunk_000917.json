@@ -1,0 +1,106 @@
+{
+  "chunk_id": "chunk_000917",
+  "document_type": "超前地质预报_洞身纵向地质素描",
+  "source_file": "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\source\\超前地质预报\\洞身纵向地质素描\\xx隧道左线线进口（TBM）_洞身纵向地质素描DyK1218+398.0～DyK1218+404.0\\数据.json",
+  "nodes": [
+    {
+      "node_id": "node_004173",
+      "node_type": "施工信息",
+      "cypher_label": "施工信息",
+      "attributes": {
+        "chainage": "DK1012+602~DK1012+612",
+        "information": "设计工程地质、水文地质情况:洞身为弱风化花岗岩，岩体完整；设duid计围岩分级:III级；施工围岩分级:IV级；施工揭示:{'地层岩性特征': '弱风化，较破碎', '构造特征': '无', '水文地质特征': '洞身潮湿，有滴水'}；结论:{'序号': '1', '里程范围': 'DK1012+602~DK1012+707', '长度(m)': '10', '探测结论': '综上所述，综合判定为Ⅳ级围岩，较设计差。>综上所述，综合判定为Ⅳ级围岩，较设计差。', '风险类别': '其他', '地质风险等级': 'green'}；后续建议:建议在开挖后及时对拱顶级边墙处松动的岩块进行处理，避免掉块现象，对局部岩体破碎、易掉块的位置提前支护。做好拱底防排水措施"
+      },
+      "merge_keys": [
+        "施工信息",
+        "chainage:DK1012+602~DK1012+612",
+        "information:设计工程地质、水文地质情况:洞身为弱风化花岗岩，岩体完整；设duid计围岩分级:III级；施工围岩分级:IV级；施工揭示:{'地层岩性特征': '弱风化，较破碎', '构造特征': '无', '水文地质特征': '洞身潮湿，有滴水'}；结论:{'序号': '1', '里程范围': 'DK1012+602~DK1012+707', '长度(m)': '10', '探测结论': '综上所述，综合判定为Ⅳ级围岩，较设计差。>综上所述，综合判定为Ⅳ级围岩，较设计差。', '风险类别': '其他', '地质风险等级': 'green'}；后续建议:建议在开挖后及时对拱顶级边墙处松动的岩块进行处理，避免掉块现象，对局部岩体破碎、易掉块的位置提前支护。做好拱底防排水措施"
+      ],
+      "category": "S",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "node_id": "node_004174",
+      "node_type": "围岩等级",
+      "cypher_label": "围岩等级",
+      "attributes": {
+        "grade": "IV"
+      },
+      "merge_keys": [
+        "围岩等级",
+        "grade:IV"
+      ],
+      "category": "G",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "node_id": "node_004175",
+      "node_type": "探测结论",
+      "cypher_label": "探测结论",
+      "attributes": {
+        "detectionConclusion": "综上所述，综合判定为Ⅳ级围岩，较设计差。>综上所述，综合判定为Ⅳ级围岩，较设计差。",
+        "后续建议": "建议在开挖后及时对拱顶级边墙处松动的岩块进行处理，避免掉块现象，对局部岩体破碎、易掉块的位置提前支护。做好拱底防排水措施"
+      },
+      "merge_keys": [
+        "探测结论",
+        "detectionConclusion:综上所述，综合判定为Ⅳ级围岩，较设计差。>综上所述，综合判定为Ⅳ级围岩，较设计差。",
+        "后续建议:建议在开挖后及时对拱顶级边墙处松动的岩块进行处理，避免掉块现象，对局部岩体破碎、易掉块的位置提前支护。做好拱底防排水措施"
+      ],
+      "category": "G",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "node_id": "node_004176",
+      "node_type": "地质风险等级",
+      "cypher_label": "地质风险等级",
+      "attributes": {
+        "geologicalRiskGrade": "green"
+      },
+      "merge_keys": [
+        "地质风险等级",
+        "geologicalRiskGrade:green"
+      ],
+      "category": "C",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "node_id": "node_004177",
+      "node_type": "风险类型",
+      "cypher_label": "风险类型",
+      "attributes": {
+        "riskType": "其他"
+      },
+      "merge_keys": [
+        "风险类型",
+        "riskType:其他"
+      ],
+      "category": "C",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel_002715",
+      "relation_type": "HAS_SURROUNDING_ROCK_GRADE",
+      "cypher_label": "HAS_SURROUNDING_ROCK_GRADE",
+      "head_node_id": "node_004173",
+      "tail_node_id": "node_004174",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "relation_id": "rel_002716",
+      "relation_type": "HAS_RISK_TYPE",
+      "cypher_label": "HAS_RISK_TYPE",
+      "head_node_id": "node_004173",
+      "tail_node_id": "node_004177",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    }
+  ]
+}

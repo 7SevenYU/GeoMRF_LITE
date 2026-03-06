@@ -1,0 +1,7 @@
+{
+  "uri": "bolt://localhost:7687",
+  "username": "neo4j",
+  "password": "YOUR_NEO4J_PASSWORD_HERE",
+  "database": "neo4j",
+  "batch_size": 100
+}

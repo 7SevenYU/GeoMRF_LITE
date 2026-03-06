@@ -1,0 +1,8 @@
+{
+  "任务说明": "[任务说明]\n您是TBM隧道施工安全风险防控领域的专家。下面是一个突发的风险场景和检索得到的防控方案。请根据风险特征、地质条件和类似历史风险信息，生成专业的、可执行的处置方案。\n",
+  "突发风险场景": "[突发风险场景]\n风险描述：{query}\n位置：xx隧道{key_spa_line_name}TBM,里程为{key_spa_mileage}\n风险类型：{risk_type}\n地质环境：{key_geo}\n",
+  "地质背景": "[地质背景]\n设计风险评估：{design_risk_eval}\n探测结论：采用{design_detection_way}探测，结论为{design_conclusion}\n地质风险等级：{geological_risk_level}\n",
+  "防控方案": "[防控方案]\n适用条件：{applicable_conditions}\n处置方案：{plan}\n",
+  "历史风险": "[历史风险]\n历史相似风险：围岩等级为{history_rock_surrounding_level}，预警等级为{early_warning_level}，该段的设计风险评估信息为{history_design_info}\n探测结论：采用{history_detection_way}进行探测，探测结论为：{history_detection_conclusion}，地质风险等级为{history_geological_risk_level}\n",
+  "输出要求": "[输出要求]\n请根据以上信息:\n-分析风险的原因\n-给出推荐的预防和控制措施。\n-补充现场预防措施\n要求专业、清晰、简洁的工程表达。"
+}

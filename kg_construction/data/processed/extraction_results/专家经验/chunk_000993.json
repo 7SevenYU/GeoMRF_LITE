@@ -1,0 +1,61 @@
+{
+  "chunk_id": "chunk_000993",
+  "document_type": "专家经验",
+  "source_file": "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\source\\专家经验\\baseline_knowledge.json",
+  "nodes": [
+    {
+      "node_id": "node_004002",
+      "node_type": "紧急响应措施",
+      "cypher_label": "紧急响应措施",
+      "attributes": {
+        "emergencyResponseGuidelines": "钢筋网片：20*20cm，连接筋：&22钢筋间距1m，钢筋排：节理发育部位@5cm&18钢筋排，钢拱架：花拱架或HW100间距1.8/榀，锚杆：&25低预应力中空注浆锚杆L=3m，锁脚锚杆：/",
+        "applicableConditions": "围岩较完整，局部节理发育",
+        "s_id": 38,
+        "riskType": "富水破碎带",
+        "keywords": [
+          "富水",
+          "破碎带",
+          "较完整",
+          "节理"
+        ]
+      },
+      "merge_keys": [
+        "紧急响应措施",
+        "emergencyResponseGuidelines:钢筋网片：20*20cm，连接筋：&22钢筋间距1m，钢筋排：节理发育部位@5cm&18钢筋排，钢拱架：花拱架或HW100间距1.8/榀，锚杆：&25低预应力中空注浆锚杆L=3m，锁脚锚杆：/",
+        "applicableConditions:围岩较完整，局部节理发育",
+        "s_id:38",
+        "riskType:富水破碎带",
+        "keywords:['富水', '破碎带', '较完整', '节理']"
+      ],
+      "category": "P",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "node_id": "node_004003",
+      "node_type": "风险类型",
+      "cypher_label": "风险类型",
+      "attributes": {
+        "riskType": "富水破碎带"
+      },
+      "merge_keys": [
+        "风险类型",
+        "riskType:富水破碎带"
+      ],
+      "category": "C",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel_002584",
+      "relation_type": "RESPONDS_TO",
+      "cypher_label": "RESPONDS_TO",
+      "head_node_id": "node_004002",
+      "tail_node_id": "node_004003",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    }
+  ]
+}

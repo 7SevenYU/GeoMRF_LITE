@@ -1,0 +1,22 @@
+{
+  "model_type": "bge",
+  "bge_model_path": "models/bge-large-zh-v1.5",
+  "bert_model_path": "models/bert-base-chinese",
+  "batch_size": 32,
+  "vector_field": "embedding_vector",
+  "cache_file": "kg_construction/data/processed/embedding_cache.json",
+  "node_types": {
+    "紧急响应措施": {
+      "vec_keys": ["riskType", "applicableConditions", "emergencyResponseGuidelines", "keywords"],
+      "priority": 1
+    },
+    "施工规范": {
+      "vec_keys": ["applicableConditions", "constructionSpecifications"],
+      "priority": 2
+    },
+    "历史处置案例": {
+      "vec_keys": ["riskDescription", "chainage"],
+      "priority": 3
+    }
+  }
+}

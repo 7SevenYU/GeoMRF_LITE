@@ -1,0 +1,58 @@
+{
+  "total_document_types": 5,
+  "total_chunks": 0,
+  "details": {
+    "变更纪要": {
+      "变更纪要(pdf)": {
+        "document_type": "变更纪要",
+        "file_type": "pdf",
+        "total_chunks": 10,
+        "output_file": "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\processed\\chunks\\变更纪要(PDF)_chunks.json"
+      }
+    },
+    "超前地质预报": {
+      "超前地质预报_水平声波剖面(json)": {
+        "document_type": "超前地质预报_水平声波剖面",
+        "file_type": "json",
+        "total_chunks": 2,
+        "output_file": "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\processed\\chunks\\超前地质预报_水平声波剖面(JSON)_chunks.json"
+      },
+      "超前地质预报_洞身纵向地质素描(json)": {
+        "document_type": "超前地质预报_洞身纵向地质素描",
+        "file_type": "json",
+        "total_chunks": 1,
+        "output_file": "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\processed\\chunks\\超前地质预报_洞身纵向地质素描(JSON)_chunks.json"
+      }
+    },
+    "处置记录": {
+      "处置记录(json)": {
+        "document_type": "处置记录",
+        "file_type": "json",
+        "total_chunks": 15,
+        "output_file": "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\processed\\chunks\\处置记录(JSON)_chunks.json"
+      }
+    },
+    "设计信息": {
+      "设计信息(pdf)": {
+        "document_type": "设计信息",
+        "file_type": "pdf",
+        "total_chunks": 9,
+        "output_file": "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\processed\\chunks\\设计信息(PDF)_chunks.json"
+      },
+      "设计信息(json)": {
+        "document_type": "设计信息",
+        "file_type": "json",
+        "total_chunks": 13,
+        "output_file": "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\processed\\chunks\\设计信息(JSON)_chunks.json"
+      }
+    },
+    "专家经验": {
+      "专家经验(json)": {
+        "document_type": "专家经验",
+        "file_type": "json",
+        "total_chunks": 42,
+        "output_file": "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\processed\\chunks\\专家经验(JSON)_chunks.json"
+      }
+    }
+  }
+}

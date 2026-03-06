@@ -1,0 +1,166 @@
+{
+  "document_type": "变更纪要",
+  "total_chunks": 10,
+  "chunks": [
+    {
+      "chunk_id": "chunk_000997",
+      "text": "变更设计会审纪要 xx铁路xxxxxx〔2025〕011号 2025年01月01日，由xx公司主持，组织xxxx公司,xxxx集团有限公司,xxxx有 限责 任公司,xxx有限公司参加，对xxxx隧道进口左线正洞DK1012+112～DK1012+261 里程段落变更设计进行了会审，对变更设计原因.处理方案等进行了研究，形成纪要如 下：",
+      "document_type": "变更纪要",
+      "source_file": "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\source\\变更纪要\\xx隧道右线DK1012+112~DK1012+261变更纪要.pdf",
+      "file_type": "pdf",
+      "metadata": {
+        "segmentation": {
+          "strategy": "title_based",
+          "namespace": "change_document",
+          "section_id": "0",
+          "section_name": "开头"
+        },
+        "skip_save": true
+      }
+    },
+    {
+      "chunk_id": "chunk_000998",
+      "text": "1.工点名称及变更设计里程范围 xxxx隧道进口左线正洞：DK1012+112～DK1012+261",
+      "document_type": "变更纪要",
+      "source_file": "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\source\\变更纪要\\xx隧道右线DK1012+112~DK1012+261变更纪要.pdf",
+      "file_type": "pdf",
+      "metadata": {
+        "segmentation": {
+          "strategy": "title_based",
+          "namespace": "change_document",
+          "section_id": "1",
+          "section_name": "工点名称及变更设计里程范围"
+        },
+        "skip_save": true
+      }
+    },
+    {
+      "chunk_id": "chunk_000999",
+      "text": "2.原设计情况 xxxx隧道DK1012+112～DyK1012+261段为钻爆法施工段落，DyK1013+247为TBM 始发位置。该段断面类型.围岩等级及工程地质.施 组安排基本情况为：（1）断面类 型。DK1012+112～DK1012+172共计60米为TBM预备洞断面，预备洞断面按照“先施作 二衬.再通过TBM”进行设置，围岩级别均为V级，初支采用27cm厚C30高性能混凝 土，钢架采用I20b型钢，间距 0.8m，二衬拱墙采用50cm厚C40钢架混凝土，仰供采 用45cm厚C40钢架混凝 土。 （2）围岩等级及工程地质。DK1012+112～DK1012+180 为Ⅴ级围岩 ，岩性为石炭二叠系板岩夹变质砂岩；DK1012+180～DK1013+220为Ⅴ级围 岩，为F35断层破碎带区域，岩性为断层角砾岩.断层泥，拱顶岩盘厚度 4～9m；DK10 12+220～DK1012+261为Ⅴ级围岩，岩性为石炭二叠系板岩夹 变质砂岩。 （3）施组安 排。施工准备.道路及电力施工.洞口防护施工共计12个 月，钻爆法施工16.2个月， 即第28.2个月始发。按照2021年12月1日进场施工 ，即2025年1月1日进洞施 工，2025年1月2日右线TBM始发。",
+      "document_type": "变更纪要",
+      "source_file": "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\source\\变更纪要\\xx隧道右线DK1012+112~DK1012+261变更纪要.pdf",
+      "file_type": "pdf",
+      "metadata": {
+        "segmentation": {
+          "strategy": "title_based",
+          "namespace": "change_document",
+          "section_id": "2",
+          "section_name": "原设计情况"
+        },
+        "skip_save": true
+      }
+    },
+    {
+      "chunk_id": "chunk_001000",
+      "text": "3.变更设计原因 xxxx隧道进口右线钻爆段根据洞内超前地质预报及开挖揭示，围岩 情况较原设计 总体趋于变好：DK1012+112～DK1012+179段. DK1012+140～DyK1012+187段冰碛体地 层基本无地下水，冰碛体能保持稳 定，围岩级别由VI级调整为V级，原设计冰碛体 段均未启用预设计帷幕注浆 ；DK1012+187～DK1012+200段，掌子面岩性为板岩夹变质 砂岩，弱风化，由Ⅴ级调整为Ⅳ级；DK1012+200～DK1012+210段. DK1012+210～DK101 2+220段地层岩性为板岩夹变质砂岩.压碎岩及断 层角砾，强风化，节理裂隙较发育， 围岩整体较破碎~破碎，围岩整体稳定 性较差，未启用预设计的帷幕注浆。 鉴于隧道 右线围岩变好的总体趋势，经各参建单位多次研讨，认为缩短 钻爆段长度.提前始发T BM具有可行性；同时认为，TBM通过F35断层卡机 风险高，应通过F35断层后再确定 具体始发位置。2025年1月21日，开挖至DK1012+220位置，施作超前地质预报及孔 内成像，揭示前方地层岩性为压 碎岩夹断层角砾，拱顶岩盘厚度8~10m，认为该位置 始发卡机风险高，建议 在前方10米处的DK1012+230位置进行始发。2025年1月22 日，开挖至DK1012+240位置，施作超前地质预报及孔内成像，揭示前方地层岩性为 石炭二叠系板岩夹变质砂岩，拱顶岩盘厚度大于16m。经参建各方确认，该里程作为调 整后的始发里程，能保证TBM安全快速始发。同时，施工单位为落实TBM提前始发方 案，组织设备单位提前实施TBM建造及现场拼装 ，2025年2月已基本完成整机拼装， 具备始发条件。由于围岩总体变好，为减小开挖断面.加快钻爆段施工，于DK1012+130 位置开始，将预备洞断面按照“先通过TBM.再施作二衬”原 则进行调整，调整后V级 围岩主要设计参数为初支采用27cm厚C30高性能混 凝土，钢架采用I20b/0.8m，二衬 采用45cm厚C40钢架混凝土；IV级围岩主要 设计参数为初支采用25cm厚C30高性能 混凝土，钢架采用I18/1.0m，二衬采 用40cm厚C40钢架混凝土。 调整隧道右线TBM 始发位置后，可实现右线TBM始发较原设计施组提 前5个月，即2025年7月4日步 进.8月29日始发，为后续处置F36.F37断 层，应对岩爆.突涌水等特殊不良地质，增 加了工期储备，有效的降低了工 期风险，技术上合理可行。同时，由于右线已施工钻 爆法段落围岩总体变好 ，DK1012+210～DK1012+261段钻爆法V级围岩存在调整为TBM 法IV级 的趋势，将降低钻爆法改TBM法增加的工程费用；再综合预备洞断面调整节 约的工程费用，该变更设计经济上合理可行。 综合技术经济分析情况，建议采用该调 整方案。\",",
+      "document_type": "变更纪要",
+      "source_file": "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\source\\变更纪要\\xx隧道右线DK1012+112~DK1012+261变更纪要.pdf",
+      "file_type": "pdf",
+      "metadata": {
+        "segmentation": {
+          "strategy": "title_based",
+          "namespace": "change_document",
+          "section_id": "3",
+          "section_name": "变更设计原因"
+        },
+        "skip_save": true
+      }
+    },
+    {
+      "chunk_id": "chunk_001001",
+      "text": "4.处理方案 （1）施工方法：DK1012+112～DK1012+180段由钻爆法调整为 TBM法。（2）衬砌 类型：DK1012+112～DK1012+180段衬砌类型由原设计 TYBP-4000-Vb调整为TP-4000-V a，按照“xx隧参03-13.14.15”施做 ；DK1011+180～DK1012+200段衬砌类型由原设 计TSFP-4000-V调整为TP- 4000-Va，按照“xx隧参03-13.14.15”施做。 （3）xxxx 隧道进口右线DK1012+200～DK1012+210段衬砌类 型由TYBP-4000-Ⅳb调整为TYBP- Ⅳ；DK1012+210～220. DK1012+220～230段衬砌类型由TYBP-4000-Ⅴb调整TYBP-Ⅴ a；DK1012+230～DK1012+240段衬砌类型由TYBP-4000-Ⅴb调整 TYBP-Ⅴa2。 （4）DK 1012+240～DK1012+250段根据现场超前地质预报及开挖 情况，开展的围岩级别与支护 措施调整变更设计，作为本本项变更的连续变 更设计，纳入本项变更设计一并计算工 程数量及费用。",
+      "document_type": "变更纪要",
+      "source_file": "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\source\\变更纪要\\xx隧道右线DK1012+112~DK1012+261变更纪要.pdf",
+      "file_type": "pdf",
+      "metadata": {
+        "segmentation": {
+          "strategy": "title_based",
+          "namespace": "change_document",
+          "section_id": "4",
+          "section_name": "处理方案"
+        },
+        "skip_save": true
+      }
+    },
+    {
+      "chunk_id": "chunk_001002",
+      "text": "变更设计会审纪要 川藏铁路CZXZZQ-8标伯隧变〔2024〕020号 2025年1月5日，由xxx项目部主持，组织xxx有限公司,xxx有限公司,xxx有限 责任公司,xxx有限公司参加，对xxx隧道进口左线TBM DK1012+514～DK1012+564里程 段落变更设计进行了会审，对变更设计原因.处理方案等进行了研究，形成纪要如 下：",
+      "document_type": "变更纪要",
+      "source_file": "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\source\\变更纪要\\xx隧道右线DK1012+514~DK1012+564变更纪要.pdf",
+      "file_type": "pdf",
+      "metadata": {
+        "segmentation": {
+          "strategy": "title_based",
+          "namespace": "change_document",
+          "section_id": "0",
+          "section_name": "开头"
+        },
+        "skip_save": true
+      }
+    },
+    {
+      "chunk_id": "chunk_001003",
+      "text": "1.工点名称及变更设计里程范围 xxxx左线TBM：DK1012+514～DK1012+564",
+      "document_type": "变更纪要",
+      "source_file": "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\source\\变更纪要\\xx隧道右线DK1012+514~DK1012+564变更纪要.pdf",
+      "file_type": "pdf",
+      "metadata": {
+        "segmentation": {
+          "strategy": "title_based",
+          "namespace": "change_document",
+          "section_id": "1",
+          "section_name": "工点名称及变更设计里程范围"
+        },
+        "skip_save": true
+      }
+    },
+    {
+      "chunk_id": "chunk_001004",
+      "text": "2.原设计情况 该段地层岩性为弱风化变质砂岩夹板岩，节理发育，岩体较破碎，弱富水，设计 围岩级别为Ⅳ级，采用TBM法施工。衬砌类型为TP-4000-IVb：初期支护全环设置HW1 00型钢钢架.间距1.8m/榀，半圆以上设置φ8钢筋网片.间距20×20cm（环×纵）， 仰拱预制块以上采用C30高性能喷射混凝土.厚15cm，半圆以上设置D25树脂卷低预 应力中空注浆锚杆.长3m.间距1.2×1.5m（环×纵）；二次衬砌采用C30素混凝土. 厚30cm。",
+      "document_type": "变更纪要",
+      "source_file": "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\source\\变更纪要\\xx隧道右线DK1012+514~DK1012+564变更纪要.pdf",
+      "file_type": "pdf",
+      "metadata": {
+        "segmentation": {
+          "strategy": "title_based",
+          "namespace": "change_document",
+          "section_id": "2",
+          "section_name": "原设计情况"
+        },
+        "skip_save": true
+      }
+    },
+    {
+      "chunk_id": "chunk_001005",
+      "text": "3.变更设计原因 根据超前地质预报结果：DK1012+514～DK1012+564段地层岩性为板岩夹变质砂岩，弱 风化，岩质软硬不均，节理裂隙发育，岩体较破碎，弱富水，建议该段按Ⅳ级围岩施 工。现场TBM掘进施工过程中，揭示围岩情况如下：DK1012+514～DK1012+524段层岩 性为石炭二叠系变质砂岩夹板岩，矿物成分以石英为主，钙质胶结，围岩整体弱风 化。砂岩锤击声较清脆，有轻微回弹，稍震手，较难击碎；板岩锤击声哑，无回弹， 较易击碎；判定岩质为软硬不均。主要结构面2组，平均间距0.1～0.3m，判定结构面 发育程度为较发育；主要结构面张开度为1～3mm，钙质胶结，判定结构面结合程度一 般；综合结构面发育程度和结合度判定岩体完整程度为较破碎。综合岩石坚硬程度. 岩体完整程度等情况，判定围岩级别为Ⅳ级。DK1012+524～DK1012+529段拱顶右侧7 0°范围.DK1012+529～DK1012+534段拱顶左侧10°～右侧60°范围.DK1012+534～D K1012+544段拱顶右侧20°～60°范围.节理裂隙发育密集，岩体破碎，呈碎石状压 碎结构，掉块较为严重。DK1012+544～DK1012+564段拱顶左侧10°～30°范围掉块严 重，形成环向2m.纵向7.2m.平均深度0.21m塌腔。",
+      "document_type": "变更纪要",
+      "source_file": "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\source\\变更纪要\\xx隧道右线DK1012+514~DK1012+564变更纪要.pdf",
+      "file_type": "pdf",
+      "metadata": {
+        "segmentation": {
+          "strategy": "title_based",
+          "namespace": "change_document",
+          "section_id": "3",
+          "section_name": "变更设计原因"
+        },
+        "skip_save": true
+      }
+    },
+    {
+      "chunk_id": "chunk_001006",
+      "text": "4.处理方案 根据超前地质预报结果.现场开挖揭示的地质情况，经参建各单位确认，对支护措施 进行调整: （1）围岩级别：维持原设计不变。 （2）衬砌类型：维持原设计TP-4000-Ⅳb不变。 （3）初期支护加强：DK1012+514～DK1012+524段拱顶右侧70°范围将Φ8钢筋网片调 整为Φ18钢筋排，钢筋排防护环向长度6m，钢筋间距5cm.长3.8m，共计120根；DK 1012+524～DK1012+534段拱顶左侧10°～右侧60°范围将Φ8钢筋网片调整为Φ18钢 筋排，钢筋排防护环向长度4.05m，钢筋间距5cm.长3.8m，共计81根；DK1012+53 4～DK1012+544段拱顶右侧20°～60°范围将Φ8钢筋网片调整为Φ18钢筋排，钢筋 排防护环向长度2.55m，钢筋间距5cm.长3.8m，共计51根。DK1012+534～DK1012+56 4段左侧塌腔处采用C30喷射混凝土回填，共计3m³。",
+      "document_type": "变更纪要",
+      "source_file": "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\source\\变更纪要\\xx隧道右线DK1012+514~DK1012+564变更纪要.pdf",
+      "file_type": "pdf",
+      "metadata": {
+        "segmentation": {
+          "strategy": "title_based",
+          "namespace": "change_document",
+          "section_id": "4",
+          "section_name": "处理方案"
+        },
+        "skip_save": true
+      }
+    }
+  ]
+}

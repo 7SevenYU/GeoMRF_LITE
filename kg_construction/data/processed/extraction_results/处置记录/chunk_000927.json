@@ -1,0 +1,126 @@
+{
+  "chunk_id": "chunk_000927",
+  "document_type": "处置记录",
+  "source_file": "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\source\\处置记录\\风险处置信息.json",
+  "nodes": [
+    {
+      "node_id": "node_004067",
+      "node_type": "历史处置案例",
+      "cypher_label": "历史处置案例",
+      "attributes": {
+        "s_id": 8,
+        "warningDate": "2025-7-25 12:11",
+        "riskDescription": "III级软质岩掉块",
+        "chainage": "DK1013+224~DK1013+268"
+      },
+      "merge_keys": [
+        "历史处置案例",
+        "s_id:8",
+        "warningDate:2025-7-25 12:11",
+        "riskDescription:III级软质岩掉块",
+        "chainage:DK1013+224~DK1013+268"
+      ],
+      "category": "P",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "node_id": "node_004068",
+      "node_type": "风险类型",
+      "cypher_label": "风险类型",
+      "attributes": {
+        "riskType": "掉块"
+      },
+      "merge_keys": [
+        "风险类型",
+        "riskType:掉块"
+      ],
+      "category": "C",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "node_id": "node_004069",
+      "node_type": "预警等级",
+      "cypher_label": "预警等级",
+      "attributes": {
+        "warningGrade": "Low"
+      },
+      "merge_keys": [
+        "预警等级",
+        "warningGrade:Low"
+      ],
+      "category": "C",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "node_id": "node_004070",
+      "node_type": "围岩等级",
+      "cypher_label": "围岩等级",
+      "attributes": {
+        "grade": "III"
+      },
+      "merge_keys": [
+        "围岩等级",
+        "grade:III"
+      ],
+      "category": "G",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "node_id": "node_004071",
+      "node_type": "探测方法",
+      "cypher_label": "探测方法",
+      "attributes": {
+        "detectionMethod": "水平声波剖面"
+      },
+      "merge_keys": [
+        "探测方法",
+        "detectionMethod:水平声波剖面"
+      ],
+      "category": "G",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel_002638",
+      "relation_type": "HAS_SURROUNDING_ROCK_GRADE",
+      "cypher_label": "HAS_SURROUNDING_ROCK_GRADE",
+      "head_node_id": "node_004067",
+      "tail_node_id": "node_004070",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "relation_id": "rel_002639",
+      "relation_type": "HAS_WARNING_GRADE",
+      "cypher_label": "HAS_WARNING_GRADE",
+      "head_node_id": "node_004067",
+      "tail_node_id": "node_004069",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "relation_id": "rel_002640",
+      "relation_type": "HAS_RISK_TYPE",
+      "cypher_label": "HAS_RISK_TYPE",
+      "head_node_id": "node_004067",
+      "tail_node_id": "node_004068",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "relation_id": "rel_002641",
+      "relation_type": "WAS_SURVEYED_BY",
+      "cypher_label": "WAS_SURVEYED_BY",
+      "head_node_id": "node_004067",
+      "tail_node_id": "node_004071",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    }
+  ]
+}

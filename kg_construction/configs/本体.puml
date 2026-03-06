@@ -1,0 +1,145 @@
+@startuml
+left to right direction
+skinparam linetype ortho
+skinparam shadowing false
+skinparam DefaultFontName "Times New Roman"
+skinparam ArrowColor #666666
+
+' ---- class style (compatible, no blocks) ----
+skinparam classBackgroundColor white
+skinparam classFontColor black
+
+' ---- border colors by stereotype (S/G/C/P only) ----
+skinparam classBorderColor<<S>> #DDBD45
+skinparam classBorderColor<<G>> #6AA84F
+skinparam classBorderColor<<C>> #CC0000
+skinparam classBorderColor<<P>> #3D85C6
+
+' ===== Nodes with attributes =====
+class "Change information" as ChangeInfo <<S>> {
+  description: Change/variation records associated with design/construction context
+  --
+  chainage
+  information
+}
+
+class "Construction information" as ConstructionInfo <<S>> {
+  description: Construction-stage records/events that carry spatiotemporal context
+  --
+  chainage
+  information
+}
+
+class "Time" as Time <<S>> {
+  description: Time point/interval used for anchoring records/events
+  --
+  time
+}
+
+class "Design information" as DesignInfo <<S>> {
+  description: Design-stage records linked to subsequent assessments/changes
+  --
+  chainage
+  information
+}
+
+class "Detection method" as DetectionMethod <<G>> {
+  description: Investigation/detection method used in a segment/case
+  --
+  detectionMethod
+}
+
+class "Detection conclusion" as DetectionConclusion <<G>> {
+  description: Detection/interpretation conclusion describing geological conditions
+  --
+  detectionConclusion
+  geologicalElements
+}
+
+class "Surrounding rock grade" as SurroundingRockGrade <<G>> {
+  description: Surrounding rock classification/grade derived from observations
+  --
+  surroundingRockGrade
+}
+
+class "Risk type" as RiskType <<C>> {
+  description: Adverse condition category (e.g., water inrush, squeezing, etc.)
+  --
+  riskType
+}
+
+class "Warning grade" as WarningGrade <<C>> {
+  description: Warning/alert level associated with a condition/case
+  --
+  warningGrade
+}
+
+class "Geological risk grade" as GeologicalRiskGrade <<C>> {
+  description: Risk level/grade inferred for the geological condition
+  --
+  geologicalRiskGrade
+}
+
+class "Risk assessment" as RiskAssessment <<C>> {
+  description: Structured risk assessment result (may include probability/consequence/level)
+  --
+  riskAssessment
+}
+
+class "Construction Specifications" as ConstructionSpecs <<P>> {
+  description: Specification-defined mitigation requirements/measures
+  --
+  constructionSpecifications
+  applicableConditions
+}
+
+class "Emergency response guidelines" as EmergencyGuidelines <<P>> {
+  description: Guideline-level mitigation protocol considering multi-factor indicators
+  --
+  emergencyResponseGuidelines
+  applicableConditions
+  keywords
+}
+
+class "Historical mitigation case" as HistoricalCase <<P>> {
+  description: Case-driven mitigation record with context and adopted measures
+  --
+  warningDate
+  riskDescription
+}
+
+' ===== Relations (kept, and aligned with original figure) =====
+ChangeInfo --> Time : HAS_SPATIOTEMPORAL
+ConstructionInfo --> Time : HAS_SPATIOTEMPORAL
+
+ChangeInfo --> DesignInfo : IS_ASSOCIATED_WITH
+ConstructionInfo --> DesignInfo : IS_ASSOCIATED_WITH
+ConstructionInfo --> DetectionConclusion : IS_ASSOCIATED_WITH
+
+DesignInfo --> RiskAssessment : HAS_RISK_ASSESSMENT
+
+ConstructionInfo --> DetectionMethod : WAS_SURVEYED_BY
+HistoricalCase --> DetectionMethod : WAS_SURVEYED_BY
+
+DetectionMethod --> DetectionConclusion : INDICATES
+DetectionMethod --> GeologicalRiskGrade : INDICATES
+DetectionMethod --> SurroundingRockGrade : INDICATES
+
+EmergencyGuidelines --> GeologicalRiskGrade : CONSIDERS
+EmergencyGuidelines --> DetectionConclusion : CONSIDERS
+EmergencyGuidelines --> SurroundingRockGrade : CONSIDERS
+EmergencyGuidelines --> WarningGrade : CONSIDERS
+EmergencyGuidelines --> RiskAssessment : CONSIDERS
+
+EmergencyGuidelines --> ConstructionSpecs : REFERS_TO
+EmergencyGuidelines --> RiskType : RESPONDS_TO
+ConstructionSpecs --> RiskType : RESPONDS_TO
+
+HistoricalCase --> SurroundingRockGrade : HAS_SURROUNDING_ROCK_GRADE
+HistoricalCase --> WarningGrade : HAS_WARNING_GRADE
+HistoricalCase --> RiskType : HAS_RISK_TYPE
+EmergencyGuidelines --> HistoricalCase : RESPONDS_TO
+
+ConstructionInfo --> HistoricalCase : OCCURS_AT
+HistoricalCase --> ConstructionInfo : OCCURS_AT
+@enduml

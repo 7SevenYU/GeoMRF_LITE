@@ -1,0 +1,71 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+kg_construction/logs/*
+!kg_construction/logs/.gitkeep
+
+# Database
+*.db
+*.sqlite
+
+# 临时文件
+*.tmp
+temp/
+tmp/
+
+# 训练生成的模型权重和checkpoint
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.safetensors
+pytorch_model.bin
+model.safetensors
+
+# 环境配置（包含敏感信息）
+.env
+.env.local
+
+# 缓存目录
+.cache/
+.pytest_cache/
+gradio_cached_examples/
+flagged/
+
+# 运行时生成的文件
+feedback_records.json
+embedding_cache.json
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# 测试覆盖率
+.coverage
+htmlcov/
+
+# 系统文件
+.DS_Store
+Thumbs.db

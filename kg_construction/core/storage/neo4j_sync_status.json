@@ -1,0 +1,56 @@
+{
+  "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\source\\专家经验\\baseline_knowledge.json": {
+    "status": "completed",
+    "sync_time": "2026-03-06T10:43:57.129103",
+    "node_count": 84,
+    "relation_count": 42
+  },
+  "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\source\\变更纪要\\xx隧道右线DK1012+112~DK1012+261变更纪要.pdf": {
+    "status": "completed",
+    "sync_time": "2026-03-06T10:43:57.130103",
+    "node_count": 6,
+    "relation_count": 7
+  },
+  "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\source\\变更纪要\\xx隧道右线DK1012+514~DK1012+564变更纪要.pdf": {
+    "status": "completed",
+    "sync_time": "2026-03-06T10:43:57.131556",
+    "node_count": 6,
+    "relation_count": 7
+  },
+  "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\source\\处置记录\\风险处置信息.json": {
+    "status": "completed",
+    "sync_time": "2026-03-06T10:43:57.132655",
+    "node_count": 75,
+    "relation_count": 60
+  },
+  "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\source\\设计信息\\design.json": {
+    "status": "completed",
+    "sync_time": "2026-03-06T10:43:57.132655",
+    "node_count": 26,
+    "relation_count": 13
+  },
+  "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\source\\设计信息\\设计说明.pdf": {
+    "status": "completed",
+    "sync_time": "2026-03-06T10:43:57.134132",
+    "node_count": 16,
+    "relation_count": 8
+  },
+  "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\source\\超前地质预报\\水平声波剖面\\xx进口左线TBM_水平声波剖面_DK1012+67\\数据.json": {
+    "status": "completed",
+    "sync_time": "2026-03-06T10:43:57.134132",
+    "node_count": 17,
+    "relation_count": 16
+  },
+  "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\source\\超前地质预报\\水平声波剖面\\xx隧道进口左线TBM_水平声波剖面_DK1012+69\\数据.json": {
+    "status": "completed",
+    "sync_time": "2026-03-06T10:43:57.135346",
+    "node_count": 17,
+    "relation_count": 16
+  },
+  "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\source\\超前地质预报\\洞身纵向地质素描\\xx隧道左线线进口（TBM）_洞身纵向地质素描DyK1218+398.0～DyK1218+404.0\\数据.json": {
+    "status": "completed",
+    "sync_time": "2026-03-06T10:43:57.136349",
+    "node_count": 5,
+    "relation_count": 2
+  }
+}

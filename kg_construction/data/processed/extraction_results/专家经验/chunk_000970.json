@@ -1,0 +1,61 @@
+{
+  "chunk_id": "chunk_000970",
+  "document_type": "专家经验",
+  "source_file": "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\source\\专家经验\\baseline_knowledge.json",
+  "nodes": [
+    {
+      "node_id": "node_003956",
+      "node_type": "紧急响应措施",
+      "cypher_label": "紧急响应措施",
+      "attributes": {
+        "emergencyResponseGuidelines": "采用带水作业全断面施工，开挖遵循边泄水边开挖，长短结合的原则，拱顶下1m处或掌子面后方循环搭接施作&76长泄水孔，掌子面水压较大或集中出水处周边施作&50短泄水孔，若支护后拱墙出水量大，可采用径向注浆，必要时采用远端泄水，减少涌水对掌子面施工的干扰、防止初支劣化掉块以便初衬施作。",
+        "applicableConditions": "围岩较完整、自稳性好、动水带压富水带段落",
+        "s_id": 15,
+        "riskType": "突涌",
+        "keywords": [
+          "突涌",
+          "较完整",
+          "自稳性",
+          "富水带"
+        ]
+      },
+      "merge_keys": [
+        "紧急响应措施",
+        "emergencyResponseGuidelines:采用带水作业全断面施工，开挖遵循边泄水边开挖，长短结合的原则，拱顶下1m处或掌子面后方循环搭接施作&76长泄水孔，掌子面水压较大或集中出水处周边施作&50短泄水孔，若支护后拱墙出水量大，可采用径向注浆，必要时采用远端泄水，减少涌水对掌子面施工的干扰、防止初支劣化掉块以便初衬施作。",
+        "applicableConditions:围岩较完整、自稳性好、动水带压富水带段落",
+        "s_id:15",
+        "riskType:突涌",
+        "keywords:['突涌', '较完整', '自稳性', '富水带']"
+      ],
+      "category": "P",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "node_id": "node_003957",
+      "node_type": "风险类型",
+      "cypher_label": "风险类型",
+      "attributes": {
+        "riskType": "突涌"
+      },
+      "merge_keys": [
+        "风险类型",
+        "riskType:突涌"
+      ],
+      "category": "C",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel_002561",
+      "relation_type": "RESPONDS_TO",
+      "cypher_label": "RESPONDS_TO",
+      "head_node_id": "node_003956",
+      "tail_node_id": "node_003957",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    }
+  ]
+}

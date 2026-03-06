@@ -1,0 +1,89 @@
+{
+  "document_types": {
+    "变更纪要": {
+      "segmentation": {
+        "strategy": "title_based",
+        "namespace": "change_document",
+        "section_patterns": {
+          "0": "^(?!\\d+\\s*\\.)",
+          "1": "1\\s*\\.\\s*工点名称及变更设计里程范围",
+          "2": "2\\s*\\.\\s*原设计情况",
+          "3": "3\\s*\\.\\s*变更设计原因",
+          "4": "4\\s*\\.\\s*处理方案",
+          "5": "5\\s*\\.\\s*变更设计类别"
+        }
+      },
+      "sections": {
+        "0": {
+          "name": "开头",
+          "type": "header",
+          "extraction_method": "regex",
+          "prompt_file": null
+        },
+        "1": {
+          "name": "工点名称及变更设计里程范围",
+          "type": "里程范围",
+          "extraction_method": "regex",
+          "prompt_file": null
+        },
+        "2": {
+          "name": "原设计情况",
+          "type": "原设计情况",
+          "extraction_method": "llm",
+          "prompt_file": "section2_information.txt"
+        },
+        "3": {
+          "name": "变更设计原因",
+          "type": "变更设计原因",
+          "extraction_method": "llm",
+          "prompt_file": "section3_risk.txt"
+        },
+        "4": {
+          "name": "处理方案",
+          "type": "处理方案",
+          "extraction_method": "llm",
+          "prompt_file": "section4_solution.txt"
+        },
+        "5": {
+          "name": "变更设计类别",
+          "type": "丢弃",
+          "extraction_method": "none",
+          "prompt_file": null
+        }
+      },
+      "save_intermediate": false
+    },
+    "设计信息(PDF)": {
+      "segmentation": {
+        "strategy": "regular",
+        "namespace": null
+      },
+      "save_intermediate": true
+    },
+    "超前地质预报": {
+      "segmentation": {
+        "strategy": "regular",
+        "namespace": null
+      },
+      "save_intermediate": true
+    },
+    "处置记录": {
+      "segmentation": {
+        "strategy": "regular",
+        "namespace": null
+      },
+      "save_intermediate": true
+    },
+    "专家经验": {
+      "segmentation": {
+        "strategy": "regular",
+        "namespace": null
+      },
+      "save_intermediate": true
+    }
+  },
+  "prompt_paths": {
+    "system_prompt": "prompts/common/system_prompt.txt",
+    "output_format": "prompts/common/output_format.txt"
+  }
+}
