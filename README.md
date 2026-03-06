@@ -6,7 +6,7 @@
 
 ## 📋 项目简介
 
-GeoMRF V2（Geological Risk Management Framework）是一个基于知识图谱的TBM隧道施工不良地质智能处置推荐系统。系统通过整合多源异构数据（设计资料、地质预报、施工记录、专家经验等），构建领域知识图谱，并结合深度学习与大语言模型，为隧道施工提供智能化的风险识别与处置方案推荐。
+GeoMRF V2（A Knowledge-Enhanced Recommendation Framework for Mitigating Adverse Geological Conditions in Railway Tunnel Construction）是一个基于知识图谱的TBM隧道施工不良地质智能处置推荐系统。系统通过整合多源异构数据（设计资料、地质预报、施工记录、专家经验等），构建领域知识图谱，并结合深度学习与大语言模型，为隧道施工提供智能化的风险识别与处置方案推荐。
 
 ### 核心功能
 
