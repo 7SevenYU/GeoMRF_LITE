@@ -1,4 +1,4 @@
 from .ner.ner_predictor import NERPredictor
-from .dynamic_weight.dynamic_weight_predictor import DynamicWeightPredictor
+from .dynamic_weight.dynamic_weight_predict import DynamicWeightPredictor
 
 __all__ = ['NERPredictor', 'DynamicWeightPredictor']

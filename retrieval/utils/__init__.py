@@ -1,4 +1,4 @@
-from .config import get_graph, get_bge_model, get_bert_model, get_tokenizer
+from .config import get_graph, get_bge_model, get_model, get_tokenizer
 from .kg_utils import (
     parse_mileage,
     extract_key_spa,
@@ -11,7 +11,7 @@ from .kg_utils import (
 __all__ = [
     'get_graph',
     'get_bge_model',
-    'get_bert_model',
+    'get_model',
     'get_tokenizer',
     'parse_mileage',
     'extract_key_spa',

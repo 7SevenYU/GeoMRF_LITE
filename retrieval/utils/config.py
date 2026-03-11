@@ -111,7 +111,7 @@ DW_BATCH_SIZE = 8
 DW_EPOCHS = 1
 DW_LR = 1e-3
 LAMBDA_ENTROPY = 0.05
-DYNAMIC_DATA_FILE = get_project_root() / "data" / "dynamic_weight_data.txt"
+DYNAMIC_DATA_FILE = get_project_root() / "retrieval" / "models" / "dynamic_weight" / "dynamic_weight_data" / "dynamic_weight_data.txt"
 DYNAMIC_SAVE_PATH = DYNAMIC_WEIGHT_CHECKPOINT_DIR
 
 # 检索配置

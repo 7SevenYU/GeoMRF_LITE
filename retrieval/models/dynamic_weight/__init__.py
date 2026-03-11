@@ -1,3 +1,3 @@
-from .dynamic_weight_predictor import DynamicWeightPredictor
+from .dynamic_weight_predict import DynamicWeightPredictor
 
 __all__ = ['DynamicWeightPredictor']

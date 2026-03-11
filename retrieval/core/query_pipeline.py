@@ -7,7 +7,7 @@ project_root = Path(__file__).parent.parent.parent
 if str(project_root) not in sys.path:
     sys.path.insert(0, str(project_root))
 
-from retrieval.models.ner.ner_predict import NERPredictor
+from retrieval.models.ner.ner_predictor import NERPredictor
 from retrieval.models.dynamic_weight.dynamic_weight_predict import DynamicWeightPredictor
 from retrieval.core.search_engine import SearchEngine
 from retrieval.utils.kg_utils import (

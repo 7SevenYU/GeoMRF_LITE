@@ -2,10 +2,11 @@ import os.path
 import sys
 from pathlib import Path
 
+import numpy as np
 import torch
 
 # 添加项目根目录到路径
-project_root = Path(__file__).parent.parent.parent.parent.parent
+project_root = Path(__file__).parent.parent.parent.parent  # dynamic_weight -> models -> retrieval -> project_root
 if str(project_root) not in sys.path:
     sys.path.insert(0, str(project_root))
 
@@ -31,7 +32,7 @@ class SubclassWithIDPreprocess(DynamicWeightPreprocess):
         """
         data = self.graph.run(query, id_list=id_list).data()
         keyword_list = [record["keywords"] for record in data]
-        vector_list = [record["vector"] for record in data]
+        vector_list = [np.array(record["vector"][0].split(','), dtype=np.float32) for record in data]
         return keyword_list, vector_list
 
 

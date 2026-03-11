@@ -36,14 +36,12 @@ kg_construction/logs/*
 temp/
 tmp/
 
-# 训练生成的模型权重和checkpoint
-*.pt
-*.pth
-*.ckpt
-*.bin
-*.safetensors
-pytorch_model.bin
-model.safetensors
+# 备份文件
+*.bak
+*.backup
+*.orig
+*_old.*
+*.old
 
 # 环境配置（包含敏感信息）
 .env
@@ -57,7 +55,6 @@ flagged/
 
 # 运行时生成的文件
 feedback_records.json
-embedding_cache.json
 
 # Jupyter Notebook
 .ipynb_checkpoints/
@@ -69,3 +66,39 @@ htmlcov/
 # 系统文件
 .DS_Store
 Thumbs.db
+
+# ===================================================================
+# GeoMRF 项目特定
+# ===================================================================
+
+# 用户明确要求忽略
+tests/
+CLAUDE.md
+
+# 敏感配置文件（包含API密钥、密码等）
+config/llm_config.json
+kg_construction/core/storage/neo4j_config.json
+
+# 模型权重目录（包含所有模型文件和配置）
+models/
+
+# 训练检查点
+**/checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.safetensors
+pytorch_model.bin
+model.safetensors
+
+# 跟踪和缓存文件（运行时生成）
+kg_construction/data/processed/embedding_cache.json
+kg_construction/core/storage/neo4j_sync_status.json
+kg_construction/core/extraction/extraction_mapping.json
+
+# 工具脚本
+scripts/
+
+# 测试配置
+pytest.ini

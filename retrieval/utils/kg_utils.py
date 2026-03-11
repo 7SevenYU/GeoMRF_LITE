@@ -218,15 +218,15 @@ def filter_risk_assessment_by_type(risk_assessments_str: str, risk_type: str) ->
 
 
 def kg_plan_relevance_retrieval(
-    scheme_id: str,
+    scheme_id: int,
     graph: Optional[object] = None
 ) -> Dict[str, Any]:
     """
     根据紧急响应措施ID查询关联的历史风险、设计信息、探测信息等
-    严格适配新版本KG结构
+    使用配置化查询，确保健壮性和本体无关性
 
     Args:
-        scheme_id: 紧急响应措施的node_id
+        scheme_id: 紧急响应措施的Neo4j内部ID（不是s_id属性）
         graph: Neo4j图对象，如果为None则使用默认配置
 
     Returns:
@@ -235,120 +235,81 @@ def kg_plan_relevance_retrieval(
     if graph is None:
         graph = config.get_graph()
 
-    query = """
-    MATCH (solution:紧急响应措施 {node_id: $scheme_id})
-    MATCH (solution)-[:RESPONDS_TO]->(history:历史处置案例)
-
-    // 获取预警等级
-    OPTIONAL MATCH (history)-[:HAS_WARNING_GRADE]->(warning_grade:预警等级)
-
-    // 获取风险类型
-    OPTIONAL MATCH (history)-[:HAS_RISK_TYPE]->(risk_type:风险类型)
-
-    // 获取发生时间和位置
-    OPTIONAL MATCH (history)-[:OCCURS_AT]->(construction:施工信息)
-    OPTIONAL MATCH (construction)-[:HAS_SPATIOTEMPORAL]->(time_node:时间)
-
-    // 获取探测信息（通过施工信息→探测方法→探测结论）
-    OPTIONAL MATCH (construction)-[:WAS_SURVEYED_BY]->(detection_method:探测方法)
-    OPTIONAL MATCH (detection_method)-[:INDICATES]->(detection_conclusion:探测结论)
-    OPTIONAL MATCH (detection_method)-[:INDICATES]->(geo_risk_level:地质风险等级)
-    OPTIONAL MATCH (detection_method)-[:INDICATES]->(rock_grade:围岩等级)
-
-    // 获取设计信息（通过施工信息→设计信息）
-    OPTIONAL MATCH (construction)-[:IS_ASSOCIATED_WITH]->(design:设计信息)
-    OPTIONAL MATCH (design)-[:HAS_SURROUNDING_ROCK_GRADE]->(design_rock_grade:围岩等级)
-
-    RETURN
-        solution.node_id AS solution_id,
-        solution.riskType AS solution_risk_type,
-        solution.applicableConditions AS applicable_conditions,
-        solution.emergencyResponseGuidelines AS emergency_response_guidelines,
-        history.node_id AS history_id,
-        history.s_id AS history_s_id,
-        history.riskDescription AS risk_description,
-        history.warningDate AS warning_date,
-        history.chainage AS history_chainage,
-        warning_grade.warningGrade AS warning_grade,
-        risk_type.riskType AS risk_type_node,
-        construction.node_id AS construction_id,
-        construction.chainage AS construction_chainage,
-        construction.information AS construction_info,
-        time_node.time AS warning_time,
-        detection_method.node_id AS detection_method_id,
-        detection_method.detectionMethod AS detection_method,
-        detection_method.chainage AS detection_chainage,
-        detection_conclusion.detectionConclusion AS detection_conclusion,
-        detection_conclusion.geologicalElements AS geological_elements,
-        detection_conclusion.后续建议 AS detection_suggestions,
-        geo_risk_level.geologicalRiskGrade AS geological_risk_level,
-        rock_grade.grade AS rock_grade_from_detection,
-        design.node_id AS design_id,
-        design.chainage AS design_chainage,
-        design.information AS design_info,
-        design.length AS design_length,
-        design.grade AS design_grade_inline,
-        design_rock_grade.grade AS design_rock_grade
-    """
-
     try:
-        results = graph.run(query, scheme_id=scheme_id).data()
+        from retrieval.core.association_config import AssociationQueryExecutor
+        executor = AssociationQueryExecutor(graph)
+        results = executor.execute_plan_queries(scheme_id)
+
+        # 将配置化查询结果转换为原有格式（保持向后兼容）
+        return _format_plan_results(results)
+
     except Exception as e:
         logger.error(f"查询紧急响应措施 {scheme_id} 失败: {e}")
         return {}
 
-    if not results:
-        logger.warning(f"未找到紧急响应措施 {scheme_id} 的关联信息")
-        return {}
 
-    record = results[0]
+def _format_plan_results(query_results: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    将配置化查询结果转换为原有格式
+
+    Args:
+        query_results: AssociationQueryExecutor返回的结果
+
+    Returns:
+        格式化后的结果字典
+    """
+    formatted = {}
 
     try:
-        # 构建方案信息
-        plan_data = {
-            "riskType": record.get("solution_risk_type"),
-            "applicableConditions": record.get("applicable_conditions"),
-            "emergencyResponseGuidelines": record.get("emergency_response_guidelines")
-        }
+        # 方案属性
+        if "plan_properties" in query_results:
+            formatted["方案"] = query_results["plan_properties"]
 
-        # 构建关联风险信息
-        risk_data = {
-            "riskDescription": record.get("risk_description"),
-            "warningDate": record.get("warning_date"),
-            "chainage": record.get("history_chainage") or record.get("construction_chainage"),
-            "预警等级": record.get("warning_grade"),
-            "风险类型": record.get("risk_type_node"),
-            "发生时间": record.get("warning_time"),
-            "发生位置": {
-                "chainage": record.get("construction_chainage") or record.get("history_chainage"),
-                "information": record.get("construction_info"),
-                "探测信息": {
-                    "detectionMethod": record.get("detection_method"),
-                    "chainage": record.get("detection_chainage"),
-                    "detectionConclusion": record.get("detection_conclusion"),
-                    "geologicalElements": record.get("geological_elements"),
-                    "后续建议": record.get("detection_suggestions"),
-                    "地质风险等级": record.get("geological_risk_level"),
-                    "围岩等级": record.get("rock_grade_from_detection")
-                },
-                "设计信息": {
-                    "chainage": record.get("design_chainage"),
-                    "length": record.get("design_length"),
-                    "information": record.get("design_info"),
-                    "grade": record.get("design_rock_grade") or record.get("design_grade_inline"),
-                    "note": "围岩等级优先使用关联关系中的，其次使用设计信息内联属性"
-                }
-            }
-        }
+        # 风险类型
+        if "risk_types" in query_results and query_results["risk_types"]:
+            formatted["风险类型"] = query_results["risk_types"][0].get("风险类型")
 
-        return {
-            "方案": plan_data,
-            "关联风险": risk_data
-        }
+        # 历史处置案例
+        if "historical_cases" in query_results and query_results["historical_cases"]:
+            formatted["历史处置案例"] = query_results["historical_cases"][0]
+
+        # 预警等级
+        if "warning_grade" in query_results and query_results["warning_grade"]:
+            formatted["预警等级"] = query_results["warning_grade"][0].get("预警等级")
+
+        # 施工信息
+        if "construction_info" in query_results and query_results["construction_info"]:
+            formatted["施工信息"] = query_results["construction_info"][0]
+
+        # 探测方法
+        if "detection_methods" in query_results and query_results["detection_methods"]:
+            formatted["探测方法"] = query_results["detection_methods"][0]
+
+        # 探测结论
+        if "detection_conclusions" in query_results and query_results["detection_conclusions"]:
+            formatted["探测结论"] = query_results["detection_conclusions"][0]
+
+        # 地质风险等级
+        if "geological_risk_levels" in query_results and query_results["geological_risk_levels"]:
+            formatted["地质风险等级"] = query_results["geological_risk_levels"][0].get("地质风险等级")
+
+        # 围岩等级
+        if "rock_grades" in query_results and query_results["rock_grades"]:
+            formatted["围岩等级"] = query_results["rock_grades"][0].get("围岩等级")
+
+        # 时间信息
+        if "time_info" in query_results and query_results["time_info"]:
+            formatted["时间"] = query_results["time_info"][0].get("时间")
+
+        # 设计信息
+        if "design_info" in query_results and query_results["design_info"]:
+            formatted["设计信息"] = query_results["design_info"][0]
+
+        return formatted
 
     except Exception as e:
-        logger.error(f"解析查询结果失败: {e}")
-        return {}
+        logger.error(f"格式化结果失败: {e}")
+        return query_results  # 返回原始结果
 
 
 def kg_mileage_relevance_retrieval(
@@ -360,7 +321,7 @@ def kg_mileage_relevance_retrieval(
 ) -> Dict[str, Any]:
     """
     根据里程、线路、风险类型查询相关的设计信息和探测信息
-    严格适配新版本KG结构
+    使用配置化查询，确保健壮性和本体无关性
 
     Args:
         line_name: 线路名称（左线/右线）
@@ -381,113 +342,73 @@ def kg_mileage_relevance_retrieval(
 
     # 解析里程
     try:
-        trans_mileage, _ = parse_mileage(mileage)
+        mileage_start, mileage_end = parse_mileage(mileage)
     except Exception as e:
         logger.error(f"里程转换失败: {e}")
         return {}
 
-    output = {}
+    try:
+        from retrieval.core.association_config import AssociationQueryExecutor
+        executor = AssociationQueryExecutor(graph)
+        results = executor.execute_mileage_queries(line_name, mileage_start, mileage_end, risk_type)
 
-    # 1. 查询设计信息
-    # 新版本：设计信息有chainage字段（格式："起始里程～终止里程"）
-    design_query = """
-    MATCH (design:设计信息)
-    WHERE design.chainage IS NOT NULL
-    RETURN design
+        # 将配置化查询结果转换为原有格式（保持向后兼容）
+        return _format_mileage_results(results)
+
+    except Exception as e:
+        logger.error(f"里程关联检索失败: {e}")
+        return {}
+
+
+def _format_mileage_results(query_results: Dict[str, Any]) -> Dict[str, Any]:
     """
+    将配置化里程查询结果转换为原有格式
+
+    Args:
+        query_results: AssociationQueryExecutor返回的结果
+
+    Returns:
+        格式化后的结果字典
+    """
+    formatted = {}
 
     try:
-        all_design_results = graph.run(design_query).data()
+        # 施工信息
+        if "construction_info" in query_results and query_results["construction_info"]:
+            formatted["施工信息"] = query_results["construction_info"][0]
+
+        # 设计信息
+        if "design_info" in query_results and query_results["design_info"]:
+            formatted["设计信息"] = query_results["design_info"][0]
+
+        # 探测方法
+        if "detection_methods" in query_results and query_results["detection_methods"]:
+            detection_data = query_results["detection_methods"][0]
+            formatted["探测方法"] = detection_data.get("探测方法")
+            formatted["探测里程"] = detection_data.get("里程")
+
+        # 探测结论
+        if "detection_conclusions" in query_results and query_results["detection_conclusions"]:
+            formatted["探测结论"] = query_results["detection_conclusions"][0]
+
+        # 地质风险等级
+        if "geological_risk_levels" in query_results and query_results["geological_risk_levels"]:
+            formatted["地质风险等级"] = query_results["geological_risk_levels"][0].get("地质风险等级")
+
+        # 围岩等级
+        if "rock_grades" in query_results and query_results["rock_grades"]:
+            formatted["围岩等级"] = query_results["rock_grades"][0].get("围岩等级")
+
+        # 历史处置案例
+        if "historical_cases" in query_results and query_results["historical_cases"]:
+            formatted["历史处置案例"] = query_results["historical_cases"][0]
+
+        # 预警等级
+        if "warning_grades" in query_results and query_results["warning_grades"]:
+            formatted["预警等级"] = query_results["warning_grades"][0].get("预警等级")
+
+        return formatted
+
     except Exception as e:
-        logger.error(f"设计节点查询失败: {e}")
-        return output
-
-    # 查找匹配的设计信息
-    for record in all_design_results:
-        design_data = record.get("design", {})
-
-        if not design_data:
-            continue
-
-        try:
-            # 解析设计信息的chainage（"起始里程～终止里程"）
-            design_chainage = design_data.get("chainage", "")
-            if design_chainage:
-                start, end = parse_mileage(design_chainage)
-                if start <= trans_mileage < end:
-                    # 找到匹配的设计信息
-                    output["设计信息"] = {
-                        "chainage": design_chainage,
-                        "length": design_data.get("length"),
-                        "information": design_data.get("information"),
-                        "grade": design_data.get("grade"),
-                        "note": "设计信息的内联围岩等级属性"
-                    }
-                    break
-        except Exception as e:
-            logger.error(f"设计信息解析失败: {e}")
-            continue
-
-    # 2. 查询探测信息
-    # 新版本：探测方法有chainage字段，通过INDICATES关系指向探测结论
-    detection_query = """
-    MATCH (detection_method:探测方法)-[:INDICATES]->(detection_conclusion:探测结论)
-    WHERE detection_method.chainage IS NOT NULL
-    RETURN detection_method, detection_conclusion
-    """
-
-    try:
-        all_detection_results = graph.run(detection_query).data()
-    except Exception as e:
-        logger.error(f"探测节点查询失败: {e}")
-        return output
-
-    for record in all_detection_results:
-        detection_method_data = record.get("detection_method", {})
-        detection_conclusion_data = record.get("detection_conclusion", {})
-
-        try:
-            detection_chainage = detection_method_data.get("chainage", "")
-            if detection_chainage:
-                start, end = parse_mileage(detection_chainage)
-                if start <= trans_mileage < end:
-                    # 获取该探测方法指示的所有信息（地质风险等级、围岩等级等）
-                    detection_id = detection_method_data.get("node_id")
-
-                    related_query = """
-                    MATCH (detection_method:探测方法 {node_id: $detection_id})-[:INDICATES]->(target)
-                    RETURN target
-                    """
-                    related_results = graph.run(related_query, detection_id=detection_id).data()
-
-                    # 提取所有关联信息
-                    geo_risk_level = None
-                    rock_grade = None
-                    for related_record in related_results:
-                        target = related_record.get("target", {})
-                            # 地质风险等级
-                        if target.get("geologicalRiskGrade"):
-                            geo_risk_level = target.get("geologicalRiskGrade")
-                        # 围岩等级
-                        elif target.get("grade"):
-                            existing_grade = rock_grade
-                            new_grade = target.get("grade")
-                            # 如果已有围岩等级，优先保留
-                            if not existing_grade:
-                                rock_grade = new_grade
-
-                    output["探测信息"] = {
-                        "detectionMethod": detection_method_data.get("detectionMethod"),
-                        "chainage": detection_chainage,
-                        "detectionConclusion": detection_conclusion_data.get("detectionConclusion"),
-                        "geologicalElements": detection_conclusion_data.get("geologicalElements"),
-                        "后续建议": detection_conclusion_data.get("后续建议"),
-                        "地质风险等级": geo_risk_level,
-                        "围岩等级": rock_grade
-                    }
-                    break
-        except Exception as e:
-            logger.error(f"探测信息解析失败: {e}")
-            continue
-
-    return output
+        logger.error(f"格式化里程结果失败: {e}")
+        return query_results  # 返回原始结果
