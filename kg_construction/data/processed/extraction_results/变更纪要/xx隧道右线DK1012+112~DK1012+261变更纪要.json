@@ -5,16 +5,16 @@
   "merged": true,
   "nodes": [
     {
-      "node_id": "node_004010",
+      "node_id": "node_004612",
       "node_type": "变更信息",
       "cypher_label": "变更信息",
       "attributes": {
-        "chainage": "DK1012+112~DK1012+261",
+        "chainage": "DK1012+112～DK1012+261",
         "information": "围岩级别由VI级调整为V级"
       },
       "merge_keys": [
         "变更信息",
-        "chainage:DK1012+112~DK1012+261",
+        "chainage:DK1012+112～DK1012+261",
         "information:围岩级别由VI级调整为V级"
       ],
       "category": "S",
@@ -22,7 +22,7 @@
       "extraction_method": "llm"
     },
     {
-      "node_id": "node_004011",
+      "node_id": "node_004613",
       "node_type": "时间",
       "cypher_label": "时间",
       "attributes": {
@@ -37,7 +37,7 @@
       "extraction_method": "llm"
     },
     {
-      "node_id": "node_004012",
+      "node_id": "node_004614",
       "node_type": "风险类型",
       "cypher_label": "风险类型",
       "attributes": {
@@ -52,32 +52,32 @@
       "extraction_method": "llm"
     },
     {
-      "node_id": "node_004013",
+      "node_id": "node_004615",
       "node_type": "围岩等级",
       "cypher_label": "围岩等级",
       "attributes": {
-        "grade": "IV级"
+        "grade": "V级"
       },
       "merge_keys": [
         "围岩等级",
-        "grade:IV级"
+        "grade:V级"
       ],
       "category": "G",
       "confidence": 0.85,
       "extraction_method": "llm"
     },
     {
-      "node_id": "node_004014",
+      "node_id": "node_004616",
       "node_type": "紧急响应措施",
       "cypher_label": "紧急响应措施",
       "attributes": {
         "emergencyResponseGuidelines": "V级围岩主要设计参数为初支采用27cm厚C30高性能混凝土，钢架采用I20b/0.8m，二衬采用45cm厚C40钢架混凝土；IV级围岩主要设计参数为初支采用25cm厚C30高性能混凝土，钢架采用I18/1.0m，二衬采用40cm厚C40钢架混凝土",
-        "applicableConditions": "围岩级别IV级，地层岩性为板岩夹变质砂岩，强风化，节理裂隙发育",
+        "applicableConditions": "围岩级别V级，地层岩性为板岩夹变质砂岩，节理裂隙发育",
         "s_id": null,
         "riskType": "塌方",
         "keywords": [
           "塌方",
-          "IV级",
+          "V级",
           "围岩",
           "板岩",
           "节理裂隙"
@@ -86,29 +86,29 @@
       "merge_keys": [
         "紧急响应措施",
         "emergencyResponseGuidelines:V级围岩主要设计参数为初支采用27cm厚C30高性能混凝土，钢架采用I20b/0.8m，二衬采用45cm厚C40钢架混凝土；IV级围岩主要设计参数为初支采用25cm厚C30高性能混凝土，钢架采用I18/1.0m，二衬采用40cm厚C40钢架混凝土",
-        "applicableConditions:围岩级别IV级，地层岩性为板岩夹变质砂岩，强风化，节理裂隙发育",
+        "applicableConditions:围岩级别V级，地层岩性为板岩夹变质砂岩，节理裂隙发育",
         "riskType:塌方",
-        "keywords:['塌方', 'IV级', '围岩', '板岩', '节理裂隙']"
+        "keywords:['塌方', 'V级', '围岩', '板岩', '节理裂隙']"
       ],
       "category": "P",
       "confidence": 0.85,
       "extraction_method": "llm"
     },
     {
-      "node_id": "node_004015",
+      "node_id": "node_004617",
       "node_type": "历史处置案例",
       "cypher_label": "历史处置案例",
       "attributes": {
-        "warningDate": "2025年01月21日",
-        "riskDescription": "围岩整体较破碎，节理裂隙较发育，拱顶岩盘厚度8~10m，卡机风险高",
+        "warningDate": "2025年01月01日",
+        "riskDescription": "围岩整体较破碎，节理裂隙发育，拱顶岩盘厚度8~10m",
         "s_id": null,
-        "chainage": "DK1012+200~DK1012+210"
+        "chainage": "DK1012+200～DK1012+210"
       },
       "merge_keys": [
         "历史处置案例",
-        "warningDate:2025年01月21日",
-        "riskDescription:围岩整体较破碎，节理裂隙较发育，拱顶岩盘厚度8~10m，卡机风险高",
-        "chainage:DK1012+200~DK1012+210"
+        "warningDate:2025年01月01日",
+        "riskDescription:围岩整体较破碎，节理裂隙发育，拱顶岩盘厚度8~10m",
+        "chainage:DK1012+200～DK1012+210"
       ],
       "category": "P",
       "confidence": 0.85,
@@ -117,65 +117,65 @@
   ],
   "relations": [
     {
-      "relation_id": "rel_002588",
+      "relation_id": "rel_002993",
       "relation_type": "HAS_SPATIOTEMPORAL",
       "cypher_label": "HAS_SPATIOTEMPORAL",
-      "head_node_id": "node_004010",
-      "tail_node_id": "node_004011",
+      "head_node_id": "node_004612",
+      "tail_node_id": "node_004613",
       "confidence": 0.8,
       "extraction_method": "llm"
     },
     {
-      "relation_id": "rel_002589",
+      "relation_id": "rel_002994",
       "relation_type": "HAS_RISK_TYPE",
       "cypher_label": "HAS_RISK_TYPE",
-      "head_node_id": "node_004015",
-      "tail_node_id": "node_004012",
+      "head_node_id": "node_004617",
+      "tail_node_id": "node_004614",
       "confidence": 0.8,
       "extraction_method": "llm"
     },
     {
-      "relation_id": "rel_002590",
+      "relation_id": "rel_002995",
       "relation_type": "HAS_SURROUNDING_ROCK_GRADE",
       "cypher_label": "HAS_SURROUNDING_ROCK_GRADE",
-      "head_node_id": "node_004015",
-      "tail_node_id": "node_004013",
+      "head_node_id": "node_004617",
+      "tail_node_id": "node_004615",
       "confidence": 0.8,
       "extraction_method": "llm"
     },
     {
-      "relation_id": "rel_002591",
+      "relation_id": "rel_002996",
       "relation_type": "CONSIDERS",
       "cypher_label": "CONSIDERS",
-      "head_node_id": "node_004014",
-      "tail_node_id": "node_004013",
+      "head_node_id": "node_004616",
+      "tail_node_id": "node_004615",
       "confidence": 0.8,
       "extraction_method": "llm"
     },
     {
-      "relation_id": "rel_002592",
+      "relation_id": "rel_002997",
       "relation_type": "RESPONDS_TO",
       "cypher_label": "RESPONDS_TO",
-      "head_node_id": "node_004014",
-      "tail_node_id": "node_004012",
+      "head_node_id": "node_004616",
+      "tail_node_id": "node_004614",
       "confidence": 0.8,
       "extraction_method": "llm"
     },
     {
-      "relation_id": "rel_002593",
+      "relation_id": "rel_002998",
       "relation_type": "RESPONDS_TO",
       "cypher_label": "RESPONDS_TO",
-      "head_node_id": "node_004014",
-      "tail_node_id": "node_004015",
+      "head_node_id": "node_004616",
+      "tail_node_id": "node_004617",
       "confidence": 0.8,
       "extraction_method": "llm"
     },
     {
-      "relation_id": "rel_002594",
+      "relation_id": "rel_002999",
       "relation_type": "OCCURS_AT",
       "cypher_label": "OCCURS_AT",
-      "head_node_id": "node_004015",
-      "tail_node_id": "node_004010",
+      "head_node_id": "node_004617",
+      "tail_node_id": "node_004612",
       "confidence": 0.8,
       "extraction_method": "llm"
     }

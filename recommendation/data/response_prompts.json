@@ -1,0 +1,168 @@
+{
+  "scenarios": {
+    "first_recommendation": {
+      "description": "首次推荐场景",
+      "template": [
+        {
+          "name": "任务说明",
+          "content": "[任务说明]\n您是TBM隧道施工安全风险防控领域的专家。请根据用户提供的信息，推荐合适的处置措施。\n"
+        },
+        {
+          "name": "突发风险场景",
+          "content": "[突发风险场景]\n风险描述：{query}\n位置：{tbm_name}{line_name}{mileage}\n"
+        },
+        {
+          "name": "地质背景",
+          "content": "[地质背景]\n设计里程：{design_chainage}\n设计类型：{design_type}\n围岩等级：{rock_grade}\n地质风险等级：{geological_risk_level}\n风险评估：{current_risk_assessment}\n探测方法：{detection_method}\n探测里程：{detection_mileage}\n探测结论：{detection_conclusion}\n"
+        },
+        {
+          "name": "防控方案",
+          "content": "[防控方案]\n适用条件：{applicable_conditions}\n应急响应指南：{emergency_response_guidelines}\n"
+        },
+        {
+          "name": "历史风险",
+          "content": "[历史风险]\n历史相似风险：围岩等级为{history_grade}，预警等级为{history_warning_grade}\n历史案例描述：{history_case_description}\n历史里程：{history_chainage}\n历史探测方法：{history_detection_method}\n历史探测里程：{history_detection_mileage}\n历史探测结论：{history_detection_conclusion}\n历史地质风险等级：{history_geological_risk_level}\n"
+        },
+        {
+          "name": "输出要求",
+          "content": "[输出格式要求]\n请严格按照以下三个部分输出，每个部分都需要明确标题：\n\n### 一、风险分析\n分析当前风险的成因、严重程度、发展趋势，以及地质条件对风险的影响。\n\n### 二、防控策略\n详细说明推荐的处置措施，包括具体操作步骤、技术参数、资源配置等。\n\n### 三、注意事项\n列出施工过程中需要特别关注的要点、潜在风险点、监控指标等。\n\n请确保每个部分都有实质性内容，使用专业、简洁的工程语言。\n"
+        }
+      ]
+    },
+    "refusal_handling": {
+      "description": "拒绝处理场景",
+      "template": [
+        {
+          "name": "任务说明",
+          "content": "[任务说明]\n用户对当前推荐方案不满意。请分析原因，并从备选方案中推荐更合适的处置措施。\n"
+        },
+        {
+          "name": "当前方案",
+          "content": "[当前方案]\n原推荐方案：{current_plan}\n拒绝原因：{rejection_reason}\n"
+        },
+        {
+          "name": "备选方案",
+          "content": "[备选方案]\n适用条件：{applicable_conditions}\n应急响应指南：{emergency_response_guidelines}\n"
+        },
+        {
+          "name": "调整说明",
+          "content": "[输出格式要求]\n请严格按照以下三个部分输出：\n\n### 一、风险分析\n分析为何原方案不适用，当前风险的关键特征是什么。\n\n### 二、防控策略\n说明备选方案的优势，详细描述新的处置措施和操作要点。\n\n### 三、注意事项\n指出使用备选方案时需要特别关注的事项和风险点。\n\n请明确对比两个方案的差异，说明调整理由。\n"
+        }
+      ]
+    },
+    "follow_up_question": {
+      "description": "追问场景",
+      "template": [
+        {
+          "name": "任务说明",
+          "content": "[任务说明]\n用户提出了关于当前推荐方案的后续问题。请基于方案详情和相关信息进行解答。\n"
+        },
+        {
+          "name": "问题分析",
+          "content": "[问题分析]\n用户问题：{query}\n当前方案：{current_plan}\n"
+        },
+        {
+          "name": "相关信息",
+          "content": "[相关信息]\n设计信息：{design_information}\n历史案例：{history_case_description}\n"
+        },
+        {
+          "name": "回答要求",
+          "content": "[回答要求]\n请提供专业、详细的解答，必要时可以引用历史案例中的相似情况。\n"
+        }
+      ]
+    },
+    "supplementary_info": {
+      "description": "补充信息场景",
+      "template": [
+        {
+          "name": "任务说明",
+          "content": "[任务说明]\n用户提供了补充信息。请结合新的信息和原有方案，给出更新后的建议。\n"
+        },
+        {
+          "name": "补充信息",
+          "content": "[补充信息]\n新增信息：{supplementary_info}\n"
+        },
+        {
+          "name": "方案更新",
+          "content": "[方案更新]\n当前方案：{current_plan}\n"
+        },
+        {
+          "name": "更新建议",
+          "content": "[更新建议]\n请分析补充信息对方案的影响，并提供相应的调整建议。\n"
+        }
+      ]
+    },
+    "no_results": {
+      "description": "无检索结果场景",
+      "template": [
+        {
+          "name": "任务说明",
+          "content": "[任务说明]\n当前查询未找到相关的处置方案。请根据用户提供的信息，给出一般性的建议。\n"
+        },
+        {
+          "name": "用户查询",
+          "content": "[用户查询]\n查询内容：{query}\n"
+        },
+        {
+          "name": "风险信息",
+          "content": "[风险信息]\n风险类型：{risk_type}\n位置：{line_name}{mileage}\n"
+        },
+        {
+          "name": "一般建议",
+          "content": "[输出格式要求]\n请按照以下三个部分提供建议：\n\n### 一、风险分析\n根据风险类型分析可能的风险特征和影响因素。\n\n### 二、防控策略\n提供通用的、标准化的防控措施和处置建议。\n\n### 三、注意事项\n列出该类风险常见的注意事项和预防措施。\n\n建议应当基于相关规范和行业标准。\n"
+        }
+      ]
+    },
+    "conversation_end": {
+      "description": "对话结束场景",
+      "template": [
+        {
+          "name": "任务说明",
+          "content": "[任务说明]\n用户对推荐方案满意。请总结方案要点，并提供后续跟进建议。\n"
+        },
+        {
+          "name": "方案总结",
+          "content": "[方案总结]\n最终推荐方案：{final_plan}\n"
+        },
+        {
+          "name": "关键要点",
+          "content": "[关键要点]\n适用条件：{applicable_conditions}\n主要措施：{emergency_response_guidelines}\n"
+        },
+        {
+          "name": "方案总结",
+          "content": "[输出格式要求]\n请按照以下三个部分总结方案：\n\n### 一、风险分析\n总结该方案针对的风险特征和适用条件。\n\n### 二、防控策略\n概括核心处置措施和实施要点。\n\n### 三、注意事项\n强调施工过程中必须遵守的安全要点和监控指标。\n\n请使用简洁、专业的语言，便于现场人员理解和执行。\n"
+        }
+      ]
+    }
+  },
+  "variable_mappings": {
+    "query": "user_query",
+    "tbm_name": "query_params.tbm_name",
+    "line_name": "query_params.line_name",
+    "mileage": "query_params.mileage",
+    "design_chainage": "design_data.current_design_info[0].chainage",
+    "design_type": "design_data.current_design_info[0].information",
+    "design_information": "design_data.current_design_info[0]",
+    "detection_method": "design_data.current_detection_methods[0].detectionMethod",
+    "detection_mileage": "design_data.current_detection_methods[0].chainage",
+    "detection_conclusion": "design_data.current_detection_conclusions[0].detectionConclusion",
+    "geological_risk_level": "design_data.current_geological_risk_levels[0].geologicalRiskGrade",
+    "rock_grade": "design_data.current_design_info[0].grade",
+    "current_risk_assessment": "design_data.current_risk_assessments[0].riskAssessments",
+    "applicable_conditions": "plan_data.scheme.applicableConditions",
+    "emergency_response_guidelines": "plan_data.scheme.emergencyResponseGuidelines",
+    "history_grade": "plan_data.history_case.grade",
+    "history_warning_grade": "plan_data.warning_grade[0].warningGrade",
+    "history_case_description": "plan_data.history_case.riskDescription",
+    "history_chainage": "plan_data.history_case.chainage",
+    "history_detection_method": "plan_data.history_detection_methods[0].detectionMethod",
+    "history_detection_mileage": "plan_data.history_detection_methods[0].chainage",
+    "history_detection_conclusion": "plan_data.history_detection_conclusions[0].detectionConclusion",
+    "history_geological_risk_level": "plan_data.history_geological_risk_levels[0].geologicalRiskGrade",
+    "current_plan": "current_plan.scheme.emergencyResponseGuidelines",
+    "rejection_reason": "rejection_reason",
+    "supplementary_info": "supplementary_info",
+    "risk_type": "query_params.risk_type",
+    "final_plan": "current_plan.scheme.emergencyResponseGuidelines"
+  }
+}

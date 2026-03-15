@@ -7,7 +7,16 @@ from pathlib import Path
 import json
 
 # 添加项目根目录到路径
+# 方法1：从recommendation/core/gradio_demo.py向上4级
 project_root = Path(__file__).parent.parent.parent.parent
+# 方法2：如果方法1失败，使用当前工作目录
+if not (project_root / "config" / "llm_config.json").exists():
+    project_root = Path.cwd()
+
+# 确保项目根目录正确
+while not (project_root / "config" / "llm_config.json").exists() and project_root.parent != project_root:
+    project_root = project_root.parent
+
 if str(project_root) not in sys.path:
     sys.path.insert(0, str(project_root))
 
@@ -101,8 +110,9 @@ with gr.Blocks() as demo:
 
 
 if __name__ == "__main__":
+    # 简化启动配置，让Gradio自动处理
     demo.launch(
-        server_name="127.0.0.1",
-        server_port=7860,
-        inbrowser=True
+        share=False,  # 不创建公开链接
+        show_error=True,
+        quiet=False
     )

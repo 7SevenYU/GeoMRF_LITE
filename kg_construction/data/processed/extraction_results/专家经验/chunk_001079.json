@@ -1,0 +1,61 @@
+{
+  "chunk_id": "chunk_001079",
+  "document_type": "专家经验",
+  "source_file": "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\source\\专家经验\\baseline_knowledge.json",
+  "nodes": [
+    {
+      "node_id": "node_004451",
+      "node_type": "紧急响应措施",
+      "cypher_label": "紧急响应措施",
+      "attributes": {
+        "emergencyResponseGuidelines": "轻微岩爆Ⅱ级围岩衬砌断面初喷5cm厚CF高性能钢纤维砼，根据实际情况设局部锚杆，长3米",
+        "applicableConditions": "II级围岩,轻微岩爆",
+        "s_id": 32,
+        "riskType": "岩爆",
+        "keywords": [
+          "轻微",
+          "岩爆",
+          "II级",
+          "围岩"
+        ]
+      },
+      "merge_keys": [
+        "紧急响应措施",
+        "emergencyResponseGuidelines:轻微岩爆Ⅱ级围岩衬砌断面初喷5cm厚CF高性能钢纤维砼，根据实际情况设局部锚杆，长3米",
+        "applicableConditions:II级围岩,轻微岩爆",
+        "s_id:32",
+        "riskType:岩爆",
+        "keywords:['轻微', '岩爆', 'II级', '围岩']"
+      ],
+      "category": "P",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "node_id": "node_004452",
+      "node_type": "风险类型",
+      "cypher_label": "风险类型",
+      "attributes": {
+        "riskType": "岩爆"
+      },
+      "merge_keys": [
+        "风险类型",
+        "riskType:岩爆"
+      ],
+      "category": "C",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel_002883",
+      "relation_type": "RESPONDS_TO",
+      "cypher_label": "RESPONDS_TO",
+      "head_node_id": "node_004451",
+      "tail_node_id": "node_004452",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    }
+  ]
+}

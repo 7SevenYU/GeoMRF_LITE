@@ -12,8 +12,7 @@ project_root = Path(__file__).parent.parent.parent.parent
 if str(project_root) not in sys.path:
     sys.path.insert(0, str(project_root))
 
-from recommendation.models.intention import IntentionPredictor
-from retrieval.core.query_pipeline import TBMRiskQueryPipeline
+from retrieval.core.search_engine import SearchEngine
 
 logger = logging.getLogger(__name__)
 
@@ -23,8 +22,7 @@ class RecommendationEngine:
 
     def __init__(self):
         """初始化推荐引擎"""
-        self.intention_predictor = IntentionPredictor()
-        self.query_pipeline = TBMRiskQueryPipeline()
+        self.search_engine = SearchEngine()
         self.state = {
             "results": [],
             "index": 0,
@@ -38,13 +36,16 @@ class RecommendationEngine:
         """
         判断查询是否需要推荐（意图识别）
 
+        注意：意图识别已移至 ConversationManager 中处理
+        此方法保留用于向后兼容，始终返回 True
+
         Args:
             query: 用户查询文本
 
         Returns:
-            True表示需要推荐，False表示不需要
+            始终返回 True
         """
-        return self.intention_predictor.classify(query)
+        return True
 
     def recommend(self, query: str) -> List[Dict[str, Any]]:
         """
@@ -57,11 +58,12 @@ class RecommendationEngine:
             推荐结果列表，每个结果包含：
             - node_id: 方案节点ID
             - final_score: 最终得分
+            - score_breakdown: 得分分解
             - plan_data: 方案关联信息
             - design_data: 设计/探测信息
             - extracted_info: 提取的信息
         """
-        return self.query_pipeline.run(query)
+        return self.search_engine.search(query)
 
     def get_current_recommendation(self) -> Optional[Dict[str, Any]]:
         """

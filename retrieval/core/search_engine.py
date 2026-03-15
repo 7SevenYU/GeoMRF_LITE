@@ -199,8 +199,8 @@ class _RiskSubgraphQuerier:
                 query = """
                 MATCH (risk:风险类型 {riskType: $risk_type})<-[:RESPONDS_TO]-(solution:紧急响应措施)
                 WHERE solution.embedding_vector IS NOT NULL
-                RETURN id(solution) AS nodeId,
-                       solution.node_id AS sId,
+                RETURN id(solution) AS internal_id,
+                       solution.node_id AS node_id,
                        solution.embedding_vector AS embedding_vector,
                        solution.keywords AS keywords
                 """
@@ -216,7 +216,8 @@ class _RiskSubgraphQuerier:
             # 解析结果
             node_ids, node_vectors, node_keywords = [], [], []
             for record in results:
-                node_id = record.get('nodeId')
+                # 使用抽取时分配的node_id属性（所有节点都有，不会变化）
+                node_id = record.get('node_id')
                 vector_raw = record.get('embedding_vector')
                 keywords_raw = record.get('keywords')
 
@@ -235,6 +236,7 @@ class _RiskSubgraphQuerier:
                 else:
                     keywords = str(keywords_raw) if keywords_raw else ""
 
+                # 只保存node_id，不保存internal_id
                 node_ids.append(node_id)
                 node_vectors.append(vector)
                 node_keywords.append(keywords)
@@ -251,8 +253,8 @@ class _RiskSubgraphQuerier:
         query = """
         MATCH (solution:紧急响应措施)
         WHERE solution.embedding_vector IS NOT NULL
-        RETURN id(solution) AS nodeId,
-               solution.node_id AS sId,
+        RETURN id(solution) AS internal_id,
+               solution.node_id AS node_id,
                solution.embedding_vector AS embedding_vector,
                solution.keywords AS keywords
         """
@@ -300,7 +302,7 @@ class _VectorCoarseFilter:
             for i, sim in enumerate(similarities):
                 if sim > self.core_threshold:
                     filtered_results.append({
-                        "node_id": node_ids[i],
+                        "node_id": node_ids[i],                   # node_id属性
                         "coarse_similarity": float(sim),
                         "keywords": ""  # 稍后在阶段3填充
                     })
@@ -366,7 +368,7 @@ class _DynamicWeightCalculator:
                 key_geo_text = self.lexicon_fallback.extract_keywords(query)
 
             # 获取alpha和beta（三层容错层级2）
-            node_ids = [n["node_id"] for n in nodes]
+            node_ids = [n["node_id"] for n in nodes]  # 使用node_id属性
             try:
                 alpha, beta = self.dynamic_weight_model.predict(query, node_ids)
                 logger.info(f"动态权重预测: alpha={alpha:.4f}, beta={beta:.4f}")
@@ -437,9 +439,9 @@ class _AssociationRetriever:
         try:
             results = []
             for node in nodes:
-                node_id = node["node_id"]
+                node_id = node["node_id"]  # node_id属性
 
-                # 查询方案数据
+                # 查询方案数据（使用node_id）
                 plan_data = self._query_plan_data(node_id)
 
                 # 查询设计数据
@@ -473,9 +475,10 @@ class _AssociationRetriever:
                 "extracted_info": extracted_info
             } for n in nodes]
 
-    def _query_plan_data(self, node_id: int) -> Dict:
+    def _query_plan_data(self, node_id: str) -> Dict:
         """查询方案关联数据"""
         try:
+            logger.debug(f"查询方案数据，node_id={node_id}, type={type(node_id)}")
             return kg_plan_relevance_retrieval(node_id)
         except Exception as e:
             logger.warning(f"节点{node_id}的方案数据查询失败: {e}")

@@ -33,7 +33,7 @@ class IntentionPredictor:
         self.model = ClassifyModel()
 
         if model_path is None:
-            model_path = os.path.join(config.IR_SAVE_PATH, "intention_model.pt")
+            model_path = os.path.join(config.IR_CHECKPOINT_DIR, "intention_model.pt")
         self._load_model(model_path)
 
     def _load_model(self, model_path: str) -> None:

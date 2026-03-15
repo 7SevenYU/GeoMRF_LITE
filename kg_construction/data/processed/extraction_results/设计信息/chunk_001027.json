@@ -1,0 +1,50 @@
+{
+  "chunk_id": "chunk_001027",
+  "document_type": "设计信息",
+  "source_file": "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\source\\设计信息\\设计说明.pdf",
+  "nodes": [
+    {
+      "node_id": "node_004561",
+      "node_type": "施工规范",
+      "cypher_label": "施工规范",
+      "attributes": {
+        "constructionSpecifications": "施工中应短进尺、及时支护，并加强掌子面的防排水工作，避免掌子面积水，引起隧道坍塌，影响施工安全。",
+        "riskType": "突涌"
+      },
+      "merge_keys": [
+        "施工规范",
+        "constructionSpecifications:施工中应短进尺、及时支护，并加强掌子面的防排水工作，避免掌子面积水，引起隧道坍塌，影响施工安全。",
+        "riskType:突涌"
+      ],
+      "category": "P",
+      "confidence": 0.85,
+      "extraction_method": "llm"
+    },
+    {
+      "node_id": "node_004562",
+      "node_type": "风险类型",
+      "cypher_label": "风险类型",
+      "attributes": {
+        "riskType": "突涌"
+      },
+      "merge_keys": [
+        "风险类型",
+        "riskType:突涌"
+      ],
+      "category": "C",
+      "confidence": 0.85,
+      "extraction_method": "llm"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel_002953",
+      "relation_type": "RESPONDS_TO",
+      "cypher_label": "RESPONDS_TO",
+      "head_node_id": "node_004561",
+      "tail_node_id": "node_004562",
+      "confidence": 0.8,
+      "extraction_method": "llm"
+    }
+  ]
+}

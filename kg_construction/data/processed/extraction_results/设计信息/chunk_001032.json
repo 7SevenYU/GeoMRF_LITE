@@ -1,0 +1,50 @@
+{
+  "chunk_id": "chunk_001032",
+  "document_type": "设计信息",
+  "source_file": "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\source\\设计信息\\设计说明.pdf",
+  "nodes": [
+    {
+      "node_id": "node_004571",
+      "node_type": "施工规范",
+      "cypher_label": "施工规范",
+      "attributes": {
+        "constructionSpecifications": "施工过程中应获取开挖洞段岩石试样开展力学试验，及时掌握岩石强度参数。同时，施工过程中应详细记录隧道开挖过程中围岩高应力破坏信息，动态校核地应力场量值和方向。基于最新的洞段岩石与地应力信息重新开展岩爆风险评估工作。",
+        "riskType": "岩爆"
+      },
+      "merge_keys": [
+        "施工规范",
+        "constructionSpecifications:施工过程中应获取开挖洞段岩石试样开展力学试验，及时掌握岩石强度参数。同时，施工过程中应详细记录隧道开挖过程中围岩高应力破坏信息，动态校核地应力场量值和方向。基于最新的洞段岩石与地应力信息重新开展岩爆风险评估工作。",
+        "riskType:岩爆"
+      ],
+      "category": "P",
+      "confidence": 0.85,
+      "extraction_method": "llm"
+    },
+    {
+      "node_id": "node_004572",
+      "node_type": "风险类型",
+      "cypher_label": "风险类型",
+      "attributes": {
+        "riskType": "岩爆"
+      },
+      "merge_keys": [
+        "风险类型",
+        "riskType:岩爆"
+      ],
+      "category": "C",
+      "confidence": 0.85,
+      "extraction_method": "llm"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel_002958",
+      "relation_type": "RESPONDS_TO",
+      "cypher_label": "RESPONDS_TO",
+      "head_node_id": "node_004571",
+      "tail_node_id": "node_004572",
+      "confidence": 0.8,
+      "extraction_method": "llm"
+    }
+  ]
+}

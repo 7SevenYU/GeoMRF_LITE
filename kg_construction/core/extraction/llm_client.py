@@ -31,6 +31,9 @@ class LLMClient:
 
         self.config_path = Path(config_path)
         self.config = self._load_config()
+        self.current_model = self.config.get("current_model")
+        if not self.current_model:
+            raise ValueError("config.json must specify 'current_model'")
         self.client = self._init_client()
 
     def _load_config(self) -> Dict[str, Any]:
@@ -43,15 +46,21 @@ class LLMClient:
             self.logger.error(f"Failed to load config: {e}")
             raise
 
+    def _get_model_config(self) -> Dict[str, Any]:
+        """获取当前模型的配置"""
+        model_config = self.config.get("models", {}).get(self.current_model, {})
+        if not model_config:
+            raise ValueError(f"Model config not found for: {self.current_model}")
+        return model_config
+
     def _init_client(self) -> OpenAI:
-        current_model = self.config.get("current_model", "qwen")
-        model_config = self.config.get("models", {}).get(current_model, {})
+        model_config = self._get_model_config()
 
         api_base = model_config.get("api_base")
         api_key = model_config.get("api_key")
 
         if not api_base or not api_key:
-            raise ValueError(f"Invalid API configuration for model {current_model}")
+            raise ValueError(f"Invalid API configuration for model {self.current_model}")
 
         return OpenAI(
             base_url=api_base,
@@ -66,11 +75,12 @@ class LLMClient:
         max_tokens: int = None,
         max_retries: int = 3
     ) -> Optional[str]:
-        current_model_name = self.config.get("current_model", "qwen")
-        model_config = self.config.get("models", {}).get(current_model_name, {})
+        model_config = self._get_model_config()
 
         if model is None:
-            model = model_config.get("model_name", "qwen-max")
+            model = model_config.get("model_name")
+            if not model:
+                raise ValueError(f"model_name not configured for {self.current_model}")
         if temperature is None:
             temperature = model_config.get("temperature", 0.7)
         if max_tokens is None:

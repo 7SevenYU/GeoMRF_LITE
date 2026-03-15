@@ -5,6 +5,7 @@ import os
 import glob
 from pathlib import Path
 
+
 def cleanup_change_documents():
     """清理变更纪要的提取结果文件"""
 
@@ -28,6 +29,7 @@ def cleanup_change_documents():
         print("现在可以重新运行 extract_triples.py 来提取变更纪要")
     else:
         print(f"目录不存在: {extraction_results_dir}")
+
 
 if __name__ == "__main__":
     cleanup_change_documents()

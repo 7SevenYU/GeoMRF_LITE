@@ -107,7 +107,7 @@ def run_epoch(
 
 def main() -> None:
     set_seed()
-    os.makedirs(config.IR_SAVE_PATH, exist_ok=True)
+    os.makedirs(config.IR_CHECKPOINT_DIR, exist_ok=True)
     device = config.device
     print(f"Device: {device}")
 
@@ -131,7 +131,7 @@ def main() -> None:
 
     # ── Training loop ─────────────────────────────────────────────────────────
     best_val_acc = 0.0
-    save_path = os.path.join(config.IR_SAVE_PATH, "intention_model.pt")
+    save_path = os.path.join(config.IR_CHECKPOINT_DIR, "intention_model.pt")
 
     print(f"\nStarting training for {config.IR_EPOCHS} epochs …\n")
     for epoch in range(1, config.IR_EPOCHS + 1):
@@ -150,7 +150,7 @@ def main() -> None:
         if val_acc > best_val_acc:
             best_val_acc = val_acc
             torch.save(model.state_dict(), save_path)
-            print(f"  ✓ Saved best model  (val acc = {best_val_acc:.4f})")
+            print(f"  [OK] Saved best model (val acc = {best_val_acc:.4f})")
 
     print(f"\nTraining complete. Best val accuracy: {best_val_acc:.4f}")
     print(f"Model saved to: {save_path}")

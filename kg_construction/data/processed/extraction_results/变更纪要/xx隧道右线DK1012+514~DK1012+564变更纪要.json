@@ -5,39 +5,39 @@
   "merged": true,
   "nodes": [
     {
-      "node_id": "node_004016",
+      "node_id": "node_004618",
       "node_type": "变更信息",
       "cypher_label": "变更信息",
       "attributes": {
         "chainage": "DK1012+514～DK1012+564",
-        "information": "初期支护调整为钢筋排"
+        "information": "初期支护加强"
       },
       "merge_keys": [
         "变更信息",
         "chainage:DK1012+514～DK1012+564",
-        "information:初期支护调整为钢筋排"
+        "information:初期支护加强"
       ],
       "category": "S",
       "confidence": 0.85,
       "extraction_method": "llm"
     },
     {
-      "node_id": "node_004017",
+      "node_id": "node_004619",
       "node_type": "时间",
       "cypher_label": "时间",
       "attributes": {
-        "time": "2025年01月05日"
+        "time": "2025年1月5日"
       },
       "merge_keys": [
         "时间",
-        "time:2025年01月05日"
+        "time:2025年1月5日"
       ],
       "category": "S",
       "confidence": 0.85,
       "extraction_method": "llm"
     },
     {
-      "node_id": "node_004018",
+      "node_id": "node_004620",
       "node_type": "风险类型",
       "cypher_label": "风险类型",
       "attributes": {
@@ -52,62 +52,64 @@
       "extraction_method": "llm"
     },
     {
-      "node_id": "node_004019",
+      "node_id": "node_004621",
       "node_type": "围岩等级",
       "cypher_label": "围岩等级",
       "attributes": {
-        "grade": "IV级"
+        "grade": "Ⅳ级"
       },
       "merge_keys": [
         "围岩等级",
-        "grade:IV级"
+        "grade:Ⅳ级"
       ],
       "category": "G",
       "confidence": 0.85,
       "extraction_method": "llm"
     },
     {
-      "node_id": "node_004020",
+      "node_id": "node_004622",
       "node_type": "紧急响应措施",
       "cypher_label": "紧急响应措施",
       "attributes": {
-        "emergencyResponseGuidelines": "初期支护加强：钢筋排防护环向长度6m，间距5cm，左侧塌腔采用C30喷射混凝土回填，共计3m³",
-        "applicableConditions": "围岩级别IV级，岩质软硬不均，节理裂隙发育",
+        "emergencyResponseGuidelines": "DK1012+514～DK1012+524段拱顶右侧70°范围将Φ8钢筋网片调整为Φ18钢筋排，钢筋排防护环向长度6m，钢筋间距5cm，长3.8m，共计120根；DK1012+524～DK1012+534段拱顶左侧10°～右侧60°范围将Φ8钢筋网片调整为Φ18钢筋排，钢筋排防护环向长度4.05m，钢筋间距5cm，长3.8m，共计81根；DK1012+534～DK1012+544段拱顶右侧20°～60°范围将Φ8钢筋网片调整为Φ18钢筋排，钢筋排防护环向长度2.55m，钢筋间距5cm，长3.8m，共计51根。DK1012+534～DK1012+564段左侧塌腔处采用C30喷射混凝土回填，共计3m³。",
+        "applicableConditions": "围岩级别Ⅳ级，岩质软硬不均，节理裂隙发育，岩体较破碎",
         "s_id": null,
         "riskType": "掉块",
         "keywords": [
           "掉块",
-          "IV级",
+          "Ⅳ级",
           "围岩",
-          "软硬不均",
-          "节理裂隙发育"
+          "破碎",
+          "节理发育",
+          "钢筋排",
+          "喷射混凝土"
         ]
       },
       "merge_keys": [
         "紧急响应措施",
-        "emergencyResponseGuidelines:初期支护加强：钢筋排防护环向长度6m，间距5cm，左侧塌腔采用C30喷射混凝土回填，共计3m³",
-        "applicableConditions:围岩级别IV级，岩质软硬不均，节理裂隙发育",
+        "emergencyResponseGuidelines:DK1012+514～DK1012+524段拱顶右侧70°范围将Φ8钢筋网片调整为Φ18钢筋排，钢筋排防护环向长度6m，钢筋间距5cm，长3.8m，共计120根；DK1012+524～DK1012+534段拱顶左侧10°～右侧60°范围将Φ8钢筋网片调整为Φ18钢筋排，钢筋排防护环向长度4.05m，钢筋间距5cm，长3.8m，共计81根；DK1012+534～DK1012+544段拱顶右侧20°～60°范围将Φ8钢筋网片调整为Φ18钢筋排，钢筋排防护环向长度2.55m，钢筋间距5cm，长3.8m，共计51根。DK1012+534～DK1012+564段左侧塌腔处采用C30喷射混凝土回填，共计3m³。",
+        "applicableConditions:围岩级别Ⅳ级，岩质软硬不均，节理裂隙发育，岩体较破碎",
         "riskType:掉块",
-        "keywords:['掉块', 'IV级', '围岩', '软硬不均', '节理裂隙发育']"
+        "keywords:['掉块', 'Ⅳ级', '围岩', '破碎', '节理发育', '钢筋排', '喷射混凝土']"
       ],
       "category": "P",
       "confidence": 0.85,
       "extraction_method": "llm"
     },
     {
-      "node_id": "node_004021",
+      "node_id": "node_004623",
       "node_type": "历史处置案例",
       "cypher_label": "历史处置案例",
       "attributes": {
-        "warningDate": "2025年01月05日",
-        "riskDescription": "岩体破碎，掉块严重，形成塌腔",
+        "warningDate": "2025年1月5日",
+        "riskDescription": "岩质软硬不均，节理裂隙发育，岩体较破碎，掉块严重",
         "s_id": null,
         "chainage": "DK1012+514～DK1012+564"
       },
       "merge_keys": [
         "历史处置案例",
-        "warningDate:2025年01月05日",
-        "riskDescription:岩体破碎，掉块严重，形成塌腔",
+        "warningDate:2025年1月5日",
+        "riskDescription:岩质软硬不均，节理裂隙发育，岩体较破碎，掉块严重",
         "chainage:DK1012+514～DK1012+564"
       ],
       "category": "P",
@@ -117,65 +119,65 @@
   ],
   "relations": [
     {
-      "relation_id": "rel_002595",
+      "relation_id": "rel_003000",
       "relation_type": "HAS_SPATIOTEMPORAL",
       "cypher_label": "HAS_SPATIOTEMPORAL",
-      "head_node_id": "node_004016",
-      "tail_node_id": "node_004017",
+      "head_node_id": "node_004618",
+      "tail_node_id": "node_004619",
       "confidence": 0.8,
       "extraction_method": "llm"
     },
     {
-      "relation_id": "rel_002596",
+      "relation_id": "rel_003001",
       "relation_type": "HAS_RISK_TYPE",
       "cypher_label": "HAS_RISK_TYPE",
-      "head_node_id": "node_004021",
-      "tail_node_id": "node_004018",
+      "head_node_id": "node_004623",
+      "tail_node_id": "node_004620",
       "confidence": 0.8,
       "extraction_method": "llm"
     },
     {
-      "relation_id": "rel_002597",
+      "relation_id": "rel_003002",
       "relation_type": "HAS_SURROUNDING_ROCK_GRADE",
       "cypher_label": "HAS_SURROUNDING_ROCK_GRADE",
-      "head_node_id": "node_004021",
-      "tail_node_id": "node_004019",
+      "head_node_id": "node_004623",
+      "tail_node_id": "node_004621",
       "confidence": 0.8,
       "extraction_method": "llm"
     },
     {
-      "relation_id": "rel_002598",
+      "relation_id": "rel_003003",
       "relation_type": "CONSIDERS",
       "cypher_label": "CONSIDERS",
-      "head_node_id": "node_004020",
-      "tail_node_id": "node_004019",
+      "head_node_id": "node_004622",
+      "tail_node_id": "node_004621",
       "confidence": 0.8,
       "extraction_method": "llm"
     },
     {
-      "relation_id": "rel_002599",
+      "relation_id": "rel_003004",
       "relation_type": "RESPONDS_TO",
       "cypher_label": "RESPONDS_TO",
-      "head_node_id": "node_004020",
-      "tail_node_id": "node_004018",
+      "head_node_id": "node_004622",
+      "tail_node_id": "node_004620",
       "confidence": 0.8,
       "extraction_method": "llm"
     },
     {
-      "relation_id": "rel_002600",
+      "relation_id": "rel_003005",
       "relation_type": "RESPONDS_TO",
       "cypher_label": "RESPONDS_TO",
-      "head_node_id": "node_004020",
-      "tail_node_id": "node_004021",
+      "head_node_id": "node_004622",
+      "tail_node_id": "node_004623",
       "confidence": 0.8,
       "extraction_method": "llm"
     },
     {
-      "relation_id": "rel_002601",
+      "relation_id": "rel_003006",
       "relation_type": "OCCURS_AT",
       "cypher_label": "OCCURS_AT",
-      "head_node_id": "node_004021",
-      "tail_node_id": "node_004016",
+      "head_node_id": "node_004623",
+      "tail_node_id": "node_004618",
       "confidence": 0.8,
       "extraction_method": "llm"
     }

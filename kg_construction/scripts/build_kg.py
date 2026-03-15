@@ -153,7 +153,6 @@ class GraphDeduplication:
 
 
 def setup_logging(log_level="INFO"):
-    project_root = _get_project_root()
     log_dir = project_root / "kg_construction" / "logs"
     log_dir.mkdir(parents=True, exist_ok=True)
 
@@ -171,6 +170,7 @@ def _create_singleton_nodes(neo4j_client):
     """
     预先创建所有单例节点（固定取值的节点类型）
     包括：围岩等级、风险类型、预警等级、地质风险等级
+    注意：探测方法不是单例节点，应根据实际数据动态创建
     如果已存在则跳过，避免重复创建
     """
     from py2neo import Node
@@ -206,14 +206,6 @@ def _create_singleton_nodes(neo4j_client):
             {"geologicalRiskGrade": "Middle"},
             {"geologicalRiskGrade": "High"},
             {"geologicalRiskGrade": "Critical"}
-        ],
-        "探测方法": [
-            {"detectionMethod": "水平声波剖面"},
-            {"detectionMethod": "TSP"},
-            {"detectionMethod": "地质雷达"},
-            {"detectionMethod": "超前钻探"},
-            {"detectionMethod": "红外探水"},
-            {"detectionMethod": "洞身纵向地质素描"}
         ]
     }
 

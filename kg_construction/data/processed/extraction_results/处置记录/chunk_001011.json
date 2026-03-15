@@ -1,0 +1,102 @@
+{
+  "chunk_id": "chunk_001011",
+  "document_type": "处置记录",
+  "source_file": "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\source\\处置记录\\风险处置信息.json",
+  "nodes": [
+    {
+      "node_id": "node_004475",
+      "node_type": "历史处置案例",
+      "cypher_label": "历史处置案例",
+      "attributes": {
+        "s_id": 2,
+        "warningDate": "2025-6-28 10:16",
+        "riskDescription": "涌水风险，IV级围岩，出水量大,局部裂隙发育,返水清澈,无掉渣现象,低富水段落",
+        "chainage": "DK1012+85~DK1012+126"
+      },
+      "merge_keys": [
+        "历史处置案例",
+        "s_id:2",
+        "warningDate:2025-6-28 10:16",
+        "riskDescription:涌水风险，IV级围岩，出水量大,局部裂隙发育,返水清澈,无掉渣现象,低富水段落",
+        "chainage:DK1012+85~DK1012+126"
+      ],
+      "category": "P",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "node_id": "node_004476",
+      "node_type": "风险类型",
+      "cypher_label": "风险类型",
+      "attributes": {
+        "riskType": "突涌"
+      },
+      "merge_keys": [
+        "风险类型",
+        "riskType:突涌"
+      ],
+      "category": "C",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "node_id": "node_004477",
+      "node_type": "预警等级",
+      "cypher_label": "预警等级",
+      "attributes": {
+        "warningGrade": "Low"
+      },
+      "merge_keys": [
+        "预警等级",
+        "warningGrade:Low"
+      ],
+      "category": "C",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "node_id": "node_004478",
+      "node_type": "围岩等级",
+      "cypher_label": "围岩等级",
+      "attributes": {
+        "grade": "IV"
+      },
+      "merge_keys": [
+        "围岩等级",
+        "grade:IV"
+      ],
+      "category": "G",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel_002896",
+      "relation_type": "HAS_SURROUNDING_ROCK_GRADE",
+      "cypher_label": "HAS_SURROUNDING_ROCK_GRADE",
+      "head_node_id": "node_004475",
+      "tail_node_id": "node_004478",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "relation_id": "rel_002897",
+      "relation_type": "HAS_WARNING_GRADE",
+      "cypher_label": "HAS_WARNING_GRADE",
+      "head_node_id": "node_004475",
+      "tail_node_id": "node_004477",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "relation_id": "rel_002898",
+      "relation_type": "HAS_RISK_TYPE",
+      "cypher_label": "HAS_RISK_TYPE",
+      "head_node_id": "node_004475",
+      "tail_node_id": "node_004476",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    }
+  ]
+}

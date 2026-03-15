@@ -1,0 +1,432 @@
+{
+  "chunk_id": "chunk_001008",
+  "document_type": "超前地质预报_水平声波剖面",
+  "source_file": "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\source\\超前地质预报\\水平声波剖面\\xx隧道进口左线TBM_水平声波剖面_DK1012+69\\数据.json",
+  "nodes": [
+    {
+      "node_id": "node_004590",
+      "node_type": "时间",
+      "cypher_label": "时间",
+      "attributes": {
+        "time": "2025-01-01"
+      },
+      "merge_keys": [
+        "时间",
+        "time:2025-01-01"
+      ],
+      "category": "S",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "node_id": "node_004591",
+      "node_type": "施工信息",
+      "cypher_label": "施工信息",
+      "attributes": {
+        "chainage": "DK1012+69~DK1012+89",
+        "information": "序号:1；长度(m):20；探测结论:该段围岩与当前掌子面相当。岩性为板岩夹变质砂岩，弱风化，岩质软硬不均，节理裂隙发育，岩体破碎，围岩整体稳定性差；风险类别:其他；地质风险等级:green"
+      },
+      "merge_keys": [
+        "施工信息",
+        "chainage:DK1012+69~DK1012+89",
+        "information:序号:1；长度(m):20；探测结论:该段围岩与当前掌子面相当。岩性为板岩夹变质砂岩，弱风化，岩质软硬不均，节理裂隙发育，岩体破碎，围岩整体稳定性差；风险类别:其他；地质风险等级:green"
+      ],
+      "category": "S",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "node_id": "node_004592",
+      "node_type": "探测方法",
+      "cypher_label": "探测方法",
+      "attributes": {
+        "chainage": "DK1012+69~DK1012+89",
+        "detectionMethod": "水平声波剖面"
+      },
+      "merge_keys": [
+        "探测方法",
+        "chainage:DK1012+69~DK1012+89",
+        "detectionMethod:水平声波剖面"
+      ],
+      "category": "G",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "node_id": "node_004593",
+      "node_type": "探测结论",
+      "cypher_label": "探测结论",
+      "attributes": {
+        "detectionConclusion": "该段围岩与当前掌子面相当。岩性为板岩夹变质砂岩，弱风化，岩质软硬不均，节理裂隙发育，岩体破碎，围岩整体稳定性差"
+      },
+      "merge_keys": [
+        "探测结论",
+        "detectionConclusion:该段围岩与当前掌子面相当。岩性为板岩夹变质砂岩，弱风化，岩质软硬不均，节理裂隙发育，岩体破碎，围岩整体稳定性差"
+      ],
+      "category": "G",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "node_id": "node_004594",
+      "node_type": "地质风险等级",
+      "cypher_label": "地质风险等级",
+      "attributes": {
+        "geologicalRiskGrade": "green",
+        "chainage": "DK1012+69~DK1012+89"
+      },
+      "merge_keys": [
+        "地质风险等级",
+        "geologicalRiskGrade:green",
+        "chainage:DK1012+69~DK1012+89"
+      ],
+      "category": "C",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "node_id": "node_004595",
+      "node_type": "施工信息",
+      "cypher_label": "施工信息",
+      "attributes": {
+        "chainage": "DK1012+89~DK1012+109",
+        "information": "序号:2；长度(m):20；探测结论:该段围岩较前段变差。岩性为板岩夹变质砂岩，弱风化，岩质软硬不均，节理裂隙发育密集，岩体破碎-极破碎，围岩整体稳定性差；风险类别:其他；地质风险等级:green"
+      },
+      "merge_keys": [
+        "施工信息",
+        "chainage:DK1012+89~DK1012+109",
+        "information:序号:2；长度(m):20；探测结论:该段围岩较前段变差。岩性为板岩夹变质砂岩，弱风化，岩质软硬不均，节理裂隙发育密集，岩体破碎-极破碎，围岩整体稳定性差；风险类别:其他；地质风险等级:green"
+      ],
+      "category": "S",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "node_id": "node_004596",
+      "node_type": "探测方法",
+      "cypher_label": "探测方法",
+      "attributes": {
+        "chainage": "DK1012+89~DK1012+109",
+        "detectionMethod": "水平声波剖面"
+      },
+      "merge_keys": [
+        "探测方法",
+        "chainage:DK1012+89~DK1012+109",
+        "detectionMethod:水平声波剖面"
+      ],
+      "category": "G",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "node_id": "node_004597",
+      "node_type": "探测结论",
+      "cypher_label": "探测结论",
+      "attributes": {
+        "detectionConclusion": "该段围岩较前段变差。岩性为板岩夹变质砂岩，弱风化，岩质软硬不均，节理裂隙发育密集，岩体破碎-极破碎，围岩整体稳定性差"
+      },
+      "merge_keys": [
+        "探测结论",
+        "detectionConclusion:该段围岩较前段变差。岩性为板岩夹变质砂岩，弱风化，岩质软硬不均，节理裂隙发育密集，岩体破碎-极破碎，围岩整体稳定性差"
+      ],
+      "category": "G",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "node_id": "node_004598",
+      "node_type": "地质风险等级",
+      "cypher_label": "地质风险等级",
+      "attributes": {
+        "geologicalRiskGrade": "green",
+        "chainage": "DK1012+89~DK1012+109"
+      },
+      "merge_keys": [
+        "地质风险等级",
+        "geologicalRiskGrade:green",
+        "chainage:DK1012+89~DK1012+109"
+      ],
+      "category": "C",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "node_id": "node_004599",
+      "node_type": "施工信息",
+      "cypher_label": "施工信息",
+      "attributes": {
+        "chainage": "DK1012+109~DK1012+129",
+        "information": "序号:3；长度(m):20；探测结论:该段围岩较前段稍有变好。岩性为板岩夹变质砂岩，弱风化，岩质软硬不均，节理裂隙发育，岩体破碎，围岩整体稳定性差；风险类别:其他；地质风险等级:green"
+      },
+      "merge_keys": [
+        "施工信息",
+        "chainage:DK1012+109~DK1012+129",
+        "information:序号:3；长度(m):20；探测结论:该段围岩较前段稍有变好。岩性为板岩夹变质砂岩，弱风化，岩质软硬不均，节理裂隙发育，岩体破碎，围岩整体稳定性差；风险类别:其他；地质风险等级:green"
+      ],
+      "category": "S",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "node_id": "node_004600",
+      "node_type": "探测方法",
+      "cypher_label": "探测方法",
+      "attributes": {
+        "chainage": "DK1012+109~DK1012+129",
+        "detectionMethod": "水平声波剖面"
+      },
+      "merge_keys": [
+        "探测方法",
+        "chainage:DK1012+109~DK1012+129",
+        "detectionMethod:水平声波剖面"
+      ],
+      "category": "G",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "node_id": "node_004601",
+      "node_type": "探测结论",
+      "cypher_label": "探测结论",
+      "attributes": {
+        "detectionConclusion": "该段围岩较前段稍有变好。岩性为板岩夹变质砂岩，弱风化，岩质软硬不均，节理裂隙发育，岩体破碎，围岩整体稳定性差"
+      },
+      "merge_keys": [
+        "探测结论",
+        "detectionConclusion:该段围岩较前段稍有变好。岩性为板岩夹变质砂岩，弱风化，岩质软硬不均，节理裂隙发育，岩体破碎，围岩整体稳定性差"
+      ],
+      "category": "G",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "node_id": "node_004602",
+      "node_type": "地质风险等级",
+      "cypher_label": "地质风险等级",
+      "attributes": {
+        "geologicalRiskGrade": "green",
+        "chainage": "DK1012+109~DK1012+129"
+      },
+      "merge_keys": [
+        "地质风险等级",
+        "geologicalRiskGrade:green",
+        "chainage:DK1012+109~DK1012+129"
+      ],
+      "category": "C",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "node_id": "node_004603",
+      "node_type": "施工信息",
+      "cypher_label": "施工信息",
+      "attributes": {
+        "chainage": "DK1012+129~DK1012+159",
+        "information": "序号:4；长度(m):30；探测结论:该段围岩较前段明显变差。岩性为板岩夹变质砂岩，弱风化，岩质软硬不均，节理裂隙发育密集，岩体破碎-极破碎，围岩整体稳定性差；风险类别:其他；地质风险等级:green"
+      },
+      "merge_keys": [
+        "施工信息",
+        "chainage:DK1012+129~DK1012+159",
+        "information:序号:4；长度(m):30；探测结论:该段围岩较前段明显变差。岩性为板岩夹变质砂岩，弱风化，岩质软硬不均，节理裂隙发育密集，岩体破碎-极破碎，围岩整体稳定性差；风险类别:其他；地质风险等级:green"
+      ],
+      "category": "S",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "node_id": "node_004604",
+      "node_type": "探测方法",
+      "cypher_label": "探测方法",
+      "attributes": {
+        "chainage": "DK1012+129~DK1012+159",
+        "detectionMethod": "水平声波剖面"
+      },
+      "merge_keys": [
+        "探测方法",
+        "chainage:DK1012+129~DK1012+159",
+        "detectionMethod:水平声波剖面"
+      ],
+      "category": "G",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "node_id": "node_004605",
+      "node_type": "探测结论",
+      "cypher_label": "探测结论",
+      "attributes": {
+        "detectionConclusion": "该段围岩较前段明显变差。岩性为板岩夹变质砂岩，弱风化，岩质软硬不均，节理裂隙发育密集，岩体破碎-极破碎，围岩整体稳定性差"
+      },
+      "merge_keys": [
+        "探测结论",
+        "detectionConclusion:该段围岩较前段明显变差。岩性为板岩夹变质砂岩，弱风化，岩质软硬不均，节理裂隙发育密集，岩体破碎-极破碎，围岩整体稳定性差"
+      ],
+      "category": "G",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "node_id": "node_004606",
+      "node_type": "地质风险等级",
+      "cypher_label": "地质风险等级",
+      "attributes": {
+        "geologicalRiskGrade": "green",
+        "chainage": "DK1012+129~DK1012+159"
+      },
+      "merge_keys": [
+        "地质风险等级",
+        "geologicalRiskGrade:green",
+        "chainage:DK1012+129~DK1012+159"
+      ],
+      "category": "C",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel_002975",
+      "relation_type": "HAS_SPATIOTEMPORAL",
+      "cypher_label": "HAS_SPATIOTEMPORAL",
+      "head_node_id": "node_004591",
+      "tail_node_id": "node_004590",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "relation_id": "rel_002976",
+      "relation_type": "WAS_SURVEYED_BY",
+      "cypher_label": "WAS_SURVEYED_BY",
+      "head_node_id": "node_004591",
+      "tail_node_id": "node_004592",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "relation_id": "rel_002977",
+      "relation_type": "INDICATES",
+      "cypher_label": "INDICATES",
+      "head_node_id": "node_004592",
+      "tail_node_id": "node_004593",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "relation_id": "rel_002978",
+      "relation_type": "INDICATES",
+      "cypher_label": "INDICATES",
+      "head_node_id": "node_004592",
+      "tail_node_id": "node_004594",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "relation_id": "rel_002979",
+      "relation_type": "HAS_SPATIOTEMPORAL",
+      "cypher_label": "HAS_SPATIOTEMPORAL",
+      "head_node_id": "node_004595",
+      "tail_node_id": "node_004590",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "relation_id": "rel_002980",
+      "relation_type": "WAS_SURVEYED_BY",
+      "cypher_label": "WAS_SURVEYED_BY",
+      "head_node_id": "node_004595",
+      "tail_node_id": "node_004596",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "relation_id": "rel_002981",
+      "relation_type": "INDICATES",
+      "cypher_label": "INDICATES",
+      "head_node_id": "node_004596",
+      "tail_node_id": "node_004597",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "relation_id": "rel_002982",
+      "relation_type": "INDICATES",
+      "cypher_label": "INDICATES",
+      "head_node_id": "node_004596",
+      "tail_node_id": "node_004598",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "relation_id": "rel_002983",
+      "relation_type": "HAS_SPATIOTEMPORAL",
+      "cypher_label": "HAS_SPATIOTEMPORAL",
+      "head_node_id": "node_004599",
+      "tail_node_id": "node_004590",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "relation_id": "rel_002984",
+      "relation_type": "WAS_SURVEYED_BY",
+      "cypher_label": "WAS_SURVEYED_BY",
+      "head_node_id": "node_004599",
+      "tail_node_id": "node_004600",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "relation_id": "rel_002985",
+      "relation_type": "INDICATES",
+      "cypher_label": "INDICATES",
+      "head_node_id": "node_004600",
+      "tail_node_id": "node_004601",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "relation_id": "rel_002986",
+      "relation_type": "INDICATES",
+      "cypher_label": "INDICATES",
+      "head_node_id": "node_004600",
+      "tail_node_id": "node_004602",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "relation_id": "rel_002987",
+      "relation_type": "HAS_SPATIOTEMPORAL",
+      "cypher_label": "HAS_SPATIOTEMPORAL",
+      "head_node_id": "node_004603",
+      "tail_node_id": "node_004590",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "relation_id": "rel_002988",
+      "relation_type": "WAS_SURVEYED_BY",
+      "cypher_label": "WAS_SURVEYED_BY",
+      "head_node_id": "node_004603",
+      "tail_node_id": "node_004604",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "relation_id": "rel_002989",
+      "relation_type": "INDICATES",
+      "cypher_label": "INDICATES",
+      "head_node_id": "node_004604",
+      "tail_node_id": "node_004605",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    },
+    {
+      "relation_id": "rel_002990",
+      "relation_type": "INDICATES",
+      "cypher_label": "INDICATES",
+      "head_node_id": "node_004604",
+      "tail_node_id": "node_004606",
+      "confidence": 1.0,
+      "extraction_method": "json"
+    }
+  ]
+}

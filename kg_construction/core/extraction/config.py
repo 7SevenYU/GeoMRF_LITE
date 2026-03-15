@@ -787,14 +787,6 @@ DOCUMENT_EXTRACTION_CONFIG = {
                     "grade": "围岩等级"
                 },
                 "description": "围岩等级节点"
-            },
-            "探测方法": {
-                "required": False,
-                "attributes": ["detectionMethod", "chainage"],
-                "json_field_mapping": {
-                    "detectionMethod": "探测方法"
-                },
-                "description": "探测方法节点（可选，包含chainage）"
             }
         },
 
@@ -819,13 +811,6 @@ DOCUMENT_EXTRACTION_CONFIG = {
                 "required": True,
                 "json_defined": True,
                 "description": "历史处置案例关联风险类型"
-            },
-            "WAS_SURVEYED_BY": {
-                "head": "历史处置案例",
-                "tail": "探测方法",
-                "required": False,
-                "json_defined": True,
-                "description": "历史处置案例关联探测方法（可选）"
             }
         }
     },

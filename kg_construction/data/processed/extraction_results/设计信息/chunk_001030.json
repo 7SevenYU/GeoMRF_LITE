@@ -1,0 +1,50 @@
+{
+  "chunk_id": "chunk_001030",
+  "document_type": "设计信息",
+  "source_file": "D:\\Code\\GeoMRF\\GeoMRFV2\\kg_construction\\data\\source\\设计信息\\设计说明.pdf",
+  "nodes": [
+    {
+      "node_id": "node_004567",
+      "node_type": "施工规范",
+      "cypher_label": "施工规范",
+      "attributes": {
+        "constructionSpecifications": "根据岩爆发生的规律，强岩爆地段，待岩爆稳定后才能进入工作面。如工作时发生岩爆，也应撤人至岩爆稳定后方可工作。",
+        "riskType": "岩爆"
+      },
+      "merge_keys": [
+        "施工规范",
+        "constructionSpecifications:根据岩爆发生的规律，强岩爆地段，待岩爆稳定后才能进入工作面。如工作时发生岩爆，也应撤人至岩爆稳定后方可工作。",
+        "riskType:岩爆"
+      ],
+      "category": "P",
+      "confidence": 0.85,
+      "extraction_method": "llm"
+    },
+    {
+      "node_id": "node_004568",
+      "node_type": "风险类型",
+      "cypher_label": "风险类型",
+      "attributes": {
+        "riskType": "岩爆"
+      },
+      "merge_keys": [
+        "风险类型",
+        "riskType:岩爆"
+      ],
+      "category": "C",
+      "confidence": 0.85,
+      "extraction_method": "llm"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel_002956",
+      "relation_type": "RESPONDS_TO",
+      "cypher_label": "RESPONDS_TO",
+      "head_node_id": "node_004567",
+      "tail_node_id": "node_004568",
+      "confidence": 0.8,
+      "extraction_method": "llm"
+    }
+  ]
+}
