@@ -107,3 +107,6 @@ pytest.ini
 
 # 测试目录（整个tests目录不提交）
 tests/
+
+# 项目文档（开发者指导文档）
+CLAUDE.md

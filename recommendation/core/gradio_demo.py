@@ -57,7 +57,7 @@ def tbm_chat_fn(message, history, temperature, max_tokens):
 # Gradio UI 构建
 with gr.Blocks() as demo:
     gr.Markdown("""
-    # 🛠️ TBM 隧道地质风险防控助手
+    # 🛠️ 隧道不良地质处置知识图谱与推荐系统
     <style>
     h1 {
       color: #1a73e8;

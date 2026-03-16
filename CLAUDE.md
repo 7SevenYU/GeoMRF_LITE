@@ -231,12 +231,12 @@ conda run -n NLP python -m tests.diagnostic.test_chainage_check
 
 ### 重要规范
 
-**❌ 禁止行为**：
+**禁止行为**：
 - **禁止在项目根目录放置测试文件**
 - **禁止在`kg_construction/scripts/`或其他模块目录放置测试/诊断脚本**
 - **所有测试代码必须放置在`tests/`目录下**
 
-**✅ 正确做法**：
+**正确做法**：
 - 单元测试 → `tests/unit/`
 - 集成测试 → `tests/integration/`
 - 诊断测试 → `tests/diagnostic/`
@@ -248,6 +248,23 @@ conda run -n NLP python -m tests.diagnostic.test_chainage_check
 - 诊断测试：`test_*.py`
 - 测试函数：`test_*()`
 - 测试类：`Test*`
+
+---
+
+### Emoji表情包使用规范
+
+**禁止使用emoji的场景**：
+- **Python代码文件**：所有.py文件中禁止使用emoji
+- **测试代码**：tests/目录下的所有测试文件
+- **功能模块代码**：kg_construction/、retrieval/、recommendation/模块代码
+- **日志输出**：代码中的print、logger输出
+- **配置文件**：JSON配置文件
+- **原因**：conda环境不支持emoji字符显示，会导致编码错误
+
+**允许使用emoji的场景**：
+- **README.md**：项目说明文档（Markdown格式，通过GitHub渲染）
+- **Gradio界面**：recommendation/core/gradio_demo.py（Gradio框架支持emoji）
+- **原因**：这些文件不通过conda环境运行，由Web浏览器或GitHub渲染
 
 ---
 
